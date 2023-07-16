@@ -9,14 +9,13 @@ project:
     - "*.md"
     - "!README.md"
     - "!LICENSE.md"
-    - "!myresources/"
+#    - "!myresources/"
     - "!renv/"
-#    - "!certificate*"
+    - "!certificate*"
 
 website:
   favicon: files/logo.jpg
   title: "Freddy Villabona"
-  cookie-consent: true   
   navbar:
       logo: /files/logo.jpg
       right:
