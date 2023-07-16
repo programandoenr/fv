@@ -41,7 +41,7 @@ website:
 #      - icon: rss
 #        href: index.xml
     right: |
-      Copyright: 2023, FV
+      2023
 
 format:
   html:
