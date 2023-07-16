@@ -1,3 +1,6 @@
+
+
+
 ---
 about:
   template: jolla
@@ -15,7 +18,14 @@ about:
       
     - icon: facebook
       href: https://facebook.comprogramandoenr
+      
+      
+    
 ---
+
+
+  
+
 
 ![](img_1.jpg)
 
@@ -26,4 +36,13 @@ about:
 ###### Working as a data scientist \| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing "Resume (ES)")
 
 ###### ProgramandoenR \| [R Views](https://rviews.rstudio.com/) \| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)
+
+---
+format: html
+---
+<style>
+  body {
+  background-image: url("files/bbb.png");
+}
+</style>
 

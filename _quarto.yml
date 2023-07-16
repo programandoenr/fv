@@ -11,7 +11,7 @@ project:
     - "!LICENSE.md"
     - "!myresources/"
     - "!renv/"
-    - "!certificate*"
+#    - "!certificate*"
 
 website:
   favicon: files/logo.jpg
@@ -30,7 +30,7 @@ website:
 
   page-footer:
     left: |
-      This site was built with <a href="https://quarto.org/">Quarto</a>
+      Built with <a href="https://quarto.org/">Quarto</a>
 #    center: 
 #      - icon: github
 #        href: https://github.com/willingc
