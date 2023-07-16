@@ -1,15 +1,13 @@
 ---
-title: "%>% Dreams"
-image: img_1.jpg
 about:
   template: jolla
   links:
     - icon: instagram
-      text: instagram
+      text: freddyvillabona
       href: https://instagram.com/freddyvillabona
       
     - icon: instagram
-      text: instagram
+      text: programandoenr
       href: https://instagram.com/programandoenr
       
     - icon: twitter
@@ -21,4 +19,13 @@ about:
       href: https://facebook.comprogramandoenr
 ---
 
-Working as a data scientist \| Resume
+```{}
+```
+
+![](img_1.jpg){fig-align="center"}
+
+## **%\>% Dreams**
+
+#### Working as a data scientist \| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing "Resume")
+
+#### ProgramandoenR \| [R Views](https://rviews.rstudio.com/) \| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)

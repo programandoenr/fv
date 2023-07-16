@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "%>% Dreams",
+    "title": "Freddy Villabona",
     "section": "",
-    "text": "Working as a data scientist | Resume"
+    "text": "%>% dreams\nWorking as a data scientist | Resume\nProgramandoenR | R Views | Syndicated on R-Bloggers & R Weekly"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,12 @@
     "title": "About",
     "section": "",
     "text": "This is the contents of the about page for my blog.\n\nAbout this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#dreams",
+    "href": "index.html#dreams",
+    "title": "Freddy Villabona",
+    "section": "%>% Dreams",
+    "text": "%>% Dreams\n\nWorking as a data scientist | Resume\n\n\nProgramandoenR | R Views | Syndicated on R-Bloggers & R Weekly"
   }
 ]

@@ -6,10 +6,11 @@ website:
   title: "Freddy Villabona"
   page-footer: "2023"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
+      - programandoenr.qmd
 
 
 format:
@@ -19,7 +20,5 @@ format:
     toc: true
 
 editor: visual
-
-
 
 
