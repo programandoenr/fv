@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Freddy Villabona"
-  page-footer: "2023"
+  page-footer: "Built with Quarto - 2023"
   navbar:
     right:
       - href: index.qmd
