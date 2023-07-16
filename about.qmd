@@ -1,28 +1,19 @@
 ---
 title: "About"
-image: profile.jpg
 about:
   template: jolla
   links:
+    - icon: instagram
+      text: freddyvillabona
+      href: https://instagram.com/freddyvillabona
+      
+    - icon: instagram
+      text: programandoenr
+      href: https://instagram.com/programandoenr
+      
     - icon: twitter
-      text: Twitter
-      href: https://twitter.com
-    # (additional links excluded for brevity)
+      href: https://twitter.com/freddyvillabona
+      
+    - icon: facebook
+      href: https://facebook.comprogramandoenr
 ---
-
-## About this blog
-
-This is the contents of the about page for my blog.
-
-------------------------------------------------------------------------
-
-About this site
-
-```{r}
-1 + 1
-```
-
-------------------------------------------------------------------------
-
-```         
-```

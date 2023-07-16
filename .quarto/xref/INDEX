@@ -7,5 +7,20 @@
   },
   "programandoenr.qmd": {
     "programandoenr.html": "c5caaed2"
+  },
+  "fv/about.qmd": {
+    "about.html": "06e4092a"
+  },
+  "fv/index.qmd": {
+    "index.html": "65fb9a9e"
+  },
+  "fv/programandoenr.qmd": {
+    "programandoenr.html": "04b470c7"
+  },
+  "posts/post-with-code/index.qmd": {
+    "index.html": "1d186ccc"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "5d9ad457"
   }
 }

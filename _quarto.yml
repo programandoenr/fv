@@ -1,17 +1,47 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - "files/"
+  render:
+    - "*.qmd"
+    - "*.Rmd"
+    - "*.md"
+    - "!README.md"
+    - "!LICENSE.md"
+    - "!myresources/"
+    - "!renv/"
+    - "!certificate*"
 
 website:
+  favicon: files/logo.jpg
   title: "Freddy Villabona"
-  page-footer: "Built with Quarto - 2023"
+  cookie-consent: true   
   navbar:
-    right:
+      logo: /files/logo.jpg
+      right:
       - href: index.qmd
         text: Home
       - about.qmd
       - programandoenr.qmd
 
+  
+#page-footer: "Built with Quarto - 2023"
+
+  page-footer:
+    left: |
+      This site was built with <a href="https://quarto.org/">Quarto</a>
+#    center: 
+#      - icon: github
+#        href: https://github.com/willingc
+#      - icon: linkedin
+#        href: https://www.linkedin.com/in/carolwilling/
+#      - icon: twitter
+#        href: https://twitter.com/WillingCarol
+#      - icon: rss
+#        href: index.xml
+    right: |
+      Copyright: 2023, FV
 
 format:
   html:
