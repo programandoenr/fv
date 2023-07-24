@@ -17,7 +17,7 @@ about:
       href: https://twitter.com/freddyvillabona
       
     - icon: facebook
-      href: https://facebook.comprogramandoenr
+      href: https://facebook.com/programandoenr
 ---
 
 #### ![](fv1png.png){width="200"}

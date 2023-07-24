@@ -1,0 +1,69 @@
+---
+execute:
+  message: false
+  warning: false
+  fig-show: no
+title: "CO2 emissions, GDP per capita and population by country - 2020"
+author: "FV"
+date: "2022-03-28"
+categories: [code, analysis]
+image: "image.svg"
+---
+
+This is a post with executable code.
+
+```{r}
+# Lib:
+library("dplyr")
+library("spData") 
+library("hrbrthemes")
+library("ggplot2")
+
+# Dat:
+s <- read.csv("s.csv")
+
+# legend_size
+legend_size <- c(5,6,7,8,9)
+
+# Plot
+plot <- ggplot(s, aes(gdpPercap, emissions)) +
+  ggtitle("CO2 emissions, GDP per capita and population by country - 2020") +
+  ylab("CO2 emissions (metric tonnes per person)") +
+  xlab("GDP per capita") +
+  geom_point(aes(size = pop, 
+                 fill = Continente), 
+             shape = 21, 
+             alpha = 0.7) +
+  scale_fill_viridis_d(
+    guide = guide_legend(override.aes = list(size = 10))) +
+  scale_size(range = c(0.1, 30),
+             name="Población (mills.)",
+             breaks = 30000 * c(250, 500, 750, 1000, 1250),
+             labels = c("280", "560", "840", "1120", "1400"),
+  ) +
+  geom_text(aes(x = gdpPercap, y = emissions+1.5, label = country),
+            color = "blue",
+            data = filter(s, 
+                          pop > 1000000000 | country %in% c("Norway",
+                                                               "Singapore",
+                                                               "Luxembourg",
+                                                               "United States",
+                                                               "Switzerland",
+                                                               "Spain",
+                                                               "Brazil",
+                                                               "Japan",
+                                                               "Qatar",
+                                                               "Kuwait",
+                                                               "Chile",
+                                                               "Netherlands",
+                                                               "Trinidad and Tobago",
+                                                               "United Kingdom"))) +
+  theme_ipsum(axis_title_size = 7) +
+  theme(legend.position="bottom",
+        legend.box = "vertical")
+
+# plot
+# :)
+```
+
+![](image.svg)

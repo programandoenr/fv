@@ -25,7 +25,7 @@
     "href": "programandoenr.html",
     "title": "programandoenR",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJul 16, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJul 13, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\nCO2 emissions, GDP per capita and population by country - 2020\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMar 28, 2022\n\n\nFV\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "fv/about.html",
@@ -44,9 +44,9 @@
   {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "title": "CO2 emissions, GDP per capita and population by country - 2020",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "This is a post with executable code.\n\n# Lib:\nlibrary(\"dplyr\")\nlibrary(\"spData\") \nlibrary(\"hrbrthemes\")\nlibrary(\"ggplot2\")\n\n# Dat:\ns <- read.csv(\"s.csv\")\n\n# legend_size\nlegend_size <- c(5,6,7,8,9)\n\n# Plot\nggplot(s, aes(gdpPercap, emissions)) +\n  ggtitle(\"CO2 emissions, GDP per capita and population by country - 2020\") +\n  ylab(\"CO2 emissions (metric tonnes per person)\") +\n  xlab(\"GDP per capita\") +\n  geom_point(aes(size = pop, \n                 fill = Continente), \n             shape = 21, \n             alpha = 0.7) +\n  scale_fill_viridis_d(\n    guide = guide_legend(override.aes = list(size = 10))) +\n  scale_size(range = c(0.1, 30),\n             name=\"Población (mills.)\",\n             breaks = 30000 * c(250, 500, 750, 1000, 1250),\n             labels = c(\"280\", \"560\", \"840\", \"1120\", \"1400\"),\n  ) +\n  geom_text(aes(x = gdpPercap, y = emissions+1.5, label = country),\n            color = \"blue\",\n            data = filter(s, pop > 1000000000 | country %in% c(\"Norway\",\n                                                               \"Singapore\",\n                                                               \"Luxembourg\",\n                                                               \"United States\",\n                                                               \"Switzerland\",\n                                                               \"Spain\",\n                                                               \"Brazil\",\n                                                               \"Japan\",\n                                                               \"Qatar\",\n                                                               \"Kuwait\",\n                                                               \"Chile\",\n                                                               \"Netherlands\",\n                                                               \"Trinidad and Tobago\",\n                                                               \"United Kingdom\"))) +\n  theme_ipsum(axis_title_size = 7) +\n  theme(legend.position=\"bottom\",\n        legend.box = \"vertical\")\n\n\n\n# :)"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -54,5 +54,12 @@
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/emissions/index.html",
+    "href": "posts/emissions/index.html",
+    "title": "CO2 emissions, GDP per capita and population by country - 2020",
+    "section": "",
+    "text": "This is a post with executable code.\n\n# Lib:\nlibrary(\"dplyr\")\nlibrary(\"spData\") \nlibrary(\"hrbrthemes\")\nlibrary(\"ggplot2\")\n\n# Dat:\ns <- read.csv(\"s.csv\")\n\n# legend_size\nlegend_size <- c(5,6,7,8,9)\n\n# Plot\nplot <- ggplot(s, aes(gdpPercap, emissions)) +\n  ggtitle(\"CO2 emissions, GDP per capita and population by country - 2020\") +\n  ylab(\"CO2 emissions (metric tonnes per person)\") +\n  xlab(\"GDP per capita\") +\n  geom_point(aes(size = pop, \n                 fill = Continente), \n             shape = 21, \n             alpha = 0.7) +\n  scale_fill_viridis_d(\n    guide = guide_legend(override.aes = list(size = 10))) +\n  scale_size(range = c(0.1, 30),\n             name=\"Población (mills.)\",\n             breaks = 30000 * c(250, 500, 750, 1000, 1250),\n             labels = c(\"280\", \"560\", \"840\", \"1120\", \"1400\"),\n  ) +\n  geom_text(aes(x = gdpPercap, y = emissions+1.5, label = country),\n            color = \"blue\",\n            data = filter(s, \n                          pop > 1000000000 | country %in% c(\"Norway\",\n                                                               \"Singapore\",\n                                                               \"Luxembourg\",\n                                                               \"United States\",\n                                                               \"Switzerland\",\n                                                               \"Spain\",\n                                                               \"Brazil\",\n                                                               \"Japan\",\n                                                               \"Qatar\",\n                                                               \"Kuwait\",\n                                                               \"Chile\",\n                                                               \"Netherlands\",\n                                                               \"Trinidad and Tobago\",\n                                                               \"United Kingdom\"))) +\n  theme_ipsum(axis_title_size = 7) +\n  theme(legend.position=\"bottom\",\n        legend.box = \"vertical\")\n\n# plot\n# :)"
   }
 ]
