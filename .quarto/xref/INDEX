@@ -25,5 +25,8 @@
   },
   "posts/emissions/index.qmd": {
     "index.html": "463d5641"
+  },
+  "posts/notes_ggplot2/index.qmd": {
+    "index.html": "bac928f6"
   }
 }
