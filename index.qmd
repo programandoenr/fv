@@ -1,7 +1,7 @@
 ---
 execute:
   include: false
-image: fv.jpg
+#image: fv.jpg
 about:
   template: jolla
   links:
@@ -20,15 +20,15 @@ about:
       href: https://facebook.comprogramandoenr
 ---
 
+#### ![](fv1png.png){width="200"}
+
 #### **`%>% Dreams`**
 
 **Freddy Villabona C.**
 
-###### Working as a data scientist in BBVA \| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing "Resume (ES)")
+###### Working as a data scientist \| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing "Resume (ES)")
 
-ProgramandoenR
-
-###### [ProgramandoenR](programandoenr) \| [R Views](https://rviews.rstudio.com/) \| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)
+###### [ProgramandoenR](https://freddyvillabona.github.io/fv/programandoenr.html) \| [R Views](https://rviews.rstudio.com/) \| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)
 
 ```{r}
 library(tidyverse)
