@@ -1,7 +1,7 @@
-
-
-
 ---
+execute:
+  include: false
+image: fv.jpg
 about:
   template: jolla
   links:
@@ -18,31 +18,22 @@ about:
       
     - icon: facebook
       href: https://facebook.comprogramandoenr
-      
-      
-    
 ---
-
-
-  
-
-
-![](img_1.jpg)
 
 #### **`%>% Dreams`**
 
 **Freddy Villabona C.**
 
-###### Working as a data scientist \| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing "Resume (ES)")
+###### Working as a data scientist in BBVA \| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing "Resume (ES)")
 
-###### ProgramandoenR \| [R Views](https://rviews.rstudio.com/) \| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)
+ProgramandoenR
 
----
-format: html
----
-<style>
-  body {
-  background-image: url("files/bbb.png");
-}
-</style>
+###### [ProgramandoenR](programandoenr) \| [R Views](https://rviews.rstudio.com/) \| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)
 
+```{r}
+library(tidyverse)
+library(leaflet)
+
+smaller <- diamonds |> 
+  filter(carat <= 2.5)
+```

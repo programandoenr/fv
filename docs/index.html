@@ -34,7 +34,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -64,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -105,34 +104,47 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-
-<p><img src="img_1.jpg" class="img-fluid"></p>
+<div class="quarto-about-jolla">
+  <img src="fv.jpg" class="about-image
+  round " style="height: 15em; width: 15em;">
+ <main class="content" id="quarto-document-content">
 <section id="dreams" class="level4">
-<h4 class="anchored" data-anchor-id="dreams"><strong><code>%&gt;% Dreams</code></strong></h4>
+<h4 data-anchor-id="dreams"><strong><code>%&gt;% Dreams</code></strong></h4>
 <p><strong>Freddy Villabona C.</strong></p>
-<section id="working-as-a-data-scientist-resume" class="level6">
-<h6 class="anchored" data-anchor-id="working-as-a-data-scientist-resume">Working as a data scientist | <a href="https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing" title="Resume (ES)">Resume</a></h6>
+<section id="working-as-a-data-scientist-in-bbva-resume" class="level6">
+<h6 data-anchor-id="working-as-a-data-scientist-in-bbva-resume">Working as a data scientist in BBVA | <a href="https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing" title="Resume (ES)">Resume</a></h6>
+<p>ProgramandoenR</p>
 </section>
 <section id="programandoenr-r-views-syndicated-on-r-bloggers-r-weekly" class="level6">
-<h6 class="anchored" data-anchor-id="programandoenr-r-views-syndicated-on-r-bloggers-r-weekly">ProgramandoenR | <a href="https://rviews.rstudio.com/">R Views</a> | Syndicated on <a href="https://www.r-bloggers.com/author/dreams/">R-Bloggers</a> &amp; <a href="https://rweekly.org/">R Weekly</a></h6>
-<style>
-  body {
-  background-image: url("files/bbb.png");
-}
-</style>
+<h6 data-anchor-id="programandoenr-r-views-syndicated-on-r-bloggers-r-weekly"><a href="programandoenr">ProgramandoenR</a> | <a href="https://rviews.rstudio.com/">R Views</a> | Syndicated on <a href="https://www.r-bloggers.com/author/dreams/">R-Bloggers</a> &amp; <a href="https://rweekly.org/">R Weekly</a></h6>
 
 
 </section>
 </section>
-
-</main> <!-- /main -->
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://instagram.com/freddyvillabona" class="about-link">
+    <i class="bi bi-instagram"></i>
+     <span class="about-link-text">freddyvillabona</span>
+  </a>
+  <a href="https://instagram.com/programandoenr" class="about-link">
+    <i class="bi bi-instagram"></i>
+     <span class="about-link-text">programandoenr</span>
+  </a>
+  <a href="https://twitter.com/freddyvillabona" class="about-link">
+    <i class="bi bi-twitter"></i>
+     <span class="about-link-text"></span>
+  </a>
+  <a href="https://facebook.comprogramandoenr" class="about-link">
+    <i class="bi bi-facebook"></i>
+     <span class="about-link-text"></span>
+  </a>
+</div>
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -153,13 +165,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;
