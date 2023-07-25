@@ -45,10 +45,8 @@ library("ggspatial")
 ru$Español <- gsub("Ciudad de Kiev","Kiev ",ru$Español)
 ru$Español <- gsub("República Autónoma de Crimea","Crimea",ru$Español)
 
-# Ruso-parlantes 
-
 es <- ggplot(data = ru) +
-  ggtitle("Porcentaje de ruso-parlantes en Ucrania") +
+  ggtitle("Percentage of Russian speakers in Ukraine") +
   xlab("") +
   ylab("") +
   geom_sf(aes(fill=PorcRus), show.legend = T, size = 0.05) +
