@@ -3,11 +3,11 @@ execute:
   message: false
   warning: false
   fig-show: no
-title: "Porcentaje de ruso-parlantes en Ucrania"
+title: "Percentage of Russian speakers in Ukraine"
 author: "FV"
 date: "2023-01-11"
 categories: [code, analysis, map]
-image: "img.svg"
+image: "img.png"
 ---
 
 Working with the libraries: "sf", "stringr", "dplyr", "ggplot2" and "ggthemes".
