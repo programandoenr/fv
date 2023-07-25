@@ -58,7 +58,7 @@ es <- ggplot(data = ru) +
   labs(fill= "%") +
   annotation_scale()
 
-es
+es 
 ```
 
 Shapefile layers 2019
