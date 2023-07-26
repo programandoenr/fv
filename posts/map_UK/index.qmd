@@ -10,7 +10,7 @@ categories: [code, map]
 image: "uk.png"
 ---
 
-This is a post with executable code.
+Map of the United Kingdom drawn from a shapefile layer. This is a post with executable code.
 
 ```{r}
 # LIB
