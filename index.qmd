@@ -30,10 +30,4 @@ about:
 
 ###### [ProgramandoenR](https://freddyvillabona.github.io/fv/programandoenr.html) \| [R Views](https://rviews.rstudio.com/) \| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)
 
-```{r}
-library(tidyverse)
-library(leaflet)
 
-smaller <- diamonds |> 
-  filter(carat <= 2.5)
-```

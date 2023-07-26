@@ -5,7 +5,7 @@ execute:
   fig-show: no
 title: "Monthly sales of an online shop in the UK 🇬🇧"
 author: "FV"
-date: "2023-04-21"
+date: "2023-05-01"
 categories: [code, map]
 image: "uk.png"
 ---
