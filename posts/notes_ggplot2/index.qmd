@@ -10,6 +10,8 @@ categories: [code, analysis]
 image: "img.svg"
 ---
 
+Qualification of a university student in their last 7 semesters. 🇨🇭
+
 ```{r}
 {
 library(ggplot2)
@@ -109,3 +111,11 @@ c
 ```
 
 ![](img.svg)
+
+Qualification of a university student in their last 7 semesters. 🇨🇭 🇨🇭
+
+Working with the libraries: "ggplot2", "dplyr", "hrbrthemes", "viridis", "readxl" and "patchwork".
+
+\- In Switzerland the maximum rating is 6 and the minimum 1.
+
+\- Customised details in the colour palette and caption.

@@ -10,7 +10,7 @@ categories: [code, analysis, map]
 image: "img.png"
 ---
 
-Working with the libraries: "sf", "stringr", "dplyr", "ggplot2" and "ggthemes".
+Working with the libraries: "sf", "stringr", "dplyr", "ggplot2" and "ggthemes". 🇺🇦
 
 ```{r}
 # lIB
@@ -61,5 +61,4 @@ es <- ggplot(data = ru) +
 es 
 ```
 
-Shapefile layers 2019
-Data: gov.uk
+Shapefile layers 2019 Data: gov.uk

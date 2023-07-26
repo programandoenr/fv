@@ -1,0 +1,14 @@
+{
+  "hash": "64be2554d6160cfb16eea8ee44eb75fa",
+  "result": {
+    "markdown": "---\nexecute:\n  message: false\n  warning: false\n  fig-show: no\ntitle: \"Percentage of Russian speakers in Ukraine\"\nauthor: \"FV\"\ndate: \"2023-01-11\"\ncategories: [code, map]\n#image: \"img.png\"\n---\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
