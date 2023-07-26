@@ -3,14 +3,14 @@ execute:
   message: false
   warning: false
   fig-show: no
-title: "Percentage of Russian speakers in Ukraine"
+title: "Percentage of Russian speakers in Ukraine 🇺🇦"
 author: "FV"
 date: "2023-01-11"
 categories: [code, analysis, map]
 image: "img.png"
 ---
 
-Working with the libraries: "sf", "stringr", "dplyr", "ggplot2" and "ggthemes". 🇺🇦
+Working with the libraries: "sf", "stringr", "dplyr", "ggplot2" and "ggthemes".
 
 ```{r}
 # lIB

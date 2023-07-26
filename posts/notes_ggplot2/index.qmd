@@ -3,14 +3,14 @@ execute:
   message: false
   warning: false
   fig-show: no
-title: "ggplot2"
+title: "ggplot2 🇨🇭"
 author: "FV"
 date: "2022-04-27"
 categories: [code, analysis]
 image: "img.svg"
 ---
 
-Qualification of a university student in their last 7 semesters. 🇨🇭
+Qualification of a university student in their last 7 semesters.
 
 ```{r}
 {
