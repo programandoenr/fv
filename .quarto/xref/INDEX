@@ -40,5 +40,8 @@
   },
   "posts/map_UK/index.qmd": {
     "index.html": "8271ccc6"
+  },
+  "posts/leaflet/index.qmd": {
+    "index.html": "201961f3"
   }
 }
