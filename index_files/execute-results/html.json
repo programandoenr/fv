@@ -1,0 +1,14 @@
+{
+  "hash": "8017e38137e0c665bbc6e80248a8ae99",
+  "result": {
+    "markdown": "---\nexecute:\n  include: false\n#image: fv.jpg\nabout:\n  template: jolla\n  links:\n    - icon: instagram\n      text: freddyvillabona\n      href: https://instagram.com/freddyvillabona\n      \n    - icon: instagram\n      text: programandoenr\n      href: https://instagram.com/programandoenr\n      \n    - icon: twitter\n      href: https://twitter.com/freddyvillabona\n      \n    - icon: facebook\n      href: https://facebook.com/programandoenr\n---\n\n\n#### ![](fv1png.png){width=\"200\"}\n\n#### **`%>% Dreams`**\n\n**Freddy Villabona C.**\n\n###### Working as a data scientist \\| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing \"Resume (ES)\")\n\n###### [ProgramandoenR](https://freddyvillabona.github.io/fv/programandoenr.html) \\| [R Views](https://rviews.rstudio.com/) \\| Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
