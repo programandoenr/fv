@@ -23,7 +23,6 @@ website:
       - href: index.qmd
         text: Home
       - programandoenr.qmd
-      - tips.qmd
 
   
 #page-footer: "Built with Quarto - 2023"
