@@ -1,5 +1,5 @@
 ---
-title: "programandoenR"
+title: "📊 programandoenR"
 listing:
   contents: posts
   sort: "date desc"
