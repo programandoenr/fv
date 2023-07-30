@@ -18,6 +18,9 @@ about:
       
     - icon: facebook
       href: https://facebook.com/programandoenr
+      
+    - text: Email
+      href: mailto:freddyvillabonac@gmail.com
 ---
 
 #### ![](fv1png.png){width="200"}
