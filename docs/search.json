@@ -25,7 +25,7 @@
     "href": "programandoenr.html",
     "title": "programandoenR",
     "section": "",
-    "text": "Monthly sales of an online shop in the UK 🇬🇧\n\n\n\n\n\n\n\ncode\n\n\nmap\n\n\n\n\n\n\n\n\n\n\n\nMay 1, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nContours with ggplot2\n\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\n\n\nApr 21, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nWorld’s tallest towers (Top 6)\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nPercentage of Russian speakers in Ukraine 🇺🇦\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\nmap\n\n\n\n\n\n\n\n\n\n\n\nJan 11, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nWinning the 2022 World Cup (Top 10 favourites)\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 1, 2022\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nggplot2 🇨🇭\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nApr 27, 2022\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nCO2 emissions, GDP per capita and population by country - 2020\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMar 28, 2022\n\n\nFV\n\n\n\n\n\n\nNo matching items"
+    "text": "Boxplot (data:diamonds)\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMay 27, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nMonthly sales of an online shop in the UK 🇬🇧\n\n\n\n\n\n\n\ncode\n\n\nmap\n\n\n\n\n\n\n\n\n\n\n\nMay 1, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nWorld’s tallest towers (Top 6)\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMar 13, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nPercentage of Russian speakers in Ukraine 🇺🇦\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\nmap\n\n\n\n\n\n\n\n\n\n\n\nJan 11, 2023\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nWinning the 2022 World Cup (Top 10 favourites)\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 1, 2022\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nggplot2 🇨🇭\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nApr 27, 2022\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nContours with ggplot2\n\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\n\n\nApr 21, 2022\n\n\nFV\n\n\n\n\n\n\n  \n\n\n\n\nCO2 emissions, GDP per capita and population by country - 2020\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMar 28, 2022\n\n\nFV\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "fv/about.html",
@@ -124,5 +124,12 @@
     "title": "Workspace",
     "section": "",
     "text": "Video"
+  },
+  {
+    "objectID": "posts/d/index.html",
+    "href": "posts/d/index.html",
+    "title": "Boxplot (data:diamonds)",
+    "section": "",
+    "text": "This time we work with diamond data. It generates a diagram of box with “ggplot2”, with various details in the chart that allow better perceive the distribution of data.\n\nlibrary(\"ggplot2\")\ndata(diamonds)\n\n\n  ggplot(data = diamonds, aes(x = cut, y = price)) +\n    scale_fill_manual (values = c(\"#d53e4f\",\n                                \"#f46d43\", \"#66c2a5\", \"#3288bd\", \"#9970ab\")) +\n    scale_color_manual(values = c(\"#d53e4f\", \"#f46d43\",\n                                \"#66c2a5\", \"#3288bd\",\n                                \"#9970ab\")) +\n    geom_jitter(aes(color = cut), size = .01, alpha = 0.4, show.legend = FALSE) +\n    geom_violin(aes(fill = cut), alpha = 0.5, color = NA) + \n    geom_boxplot(aes(color = cut), alpha = 0.5, show.legend = FALSE) +\n    xlab(\"\\nCut\") +\n    ylab(\"Price\") +\n    labs(title=\"\\nDiamonds\", subtitle =\"\", caption = \"Data: diamonds\\n\", fill= \"Cut\") +\n    \n    theme(\n      axis.text.x = element_text(size = 12),\n      axis.text.y = element_text (size = 12),\n      axis.title.x = element_text (size = 13, face=\"bold\"),\n      axis.title.y = element_text(size = 13, face=\"bold\"),\n      panel.spacing = unit(0, \"pt\"),\n      panel.border = element_blank(),\n      panel.grid.major.x = element_blank(),\n      strip.background = element_blank(),\n      strip.text = element_text(colour = \"black\"),\n      legend.justification = c(\"right\", \"top\"),\n      legend.box.just = \"right\",\n      legend.margin = margin(6, 6, 6, 6),\n      plot.title = element_text(size = 20, face = \"bold\", hjust = 0.5),\n      plot.subtitle = element_text(size = 16, face = \"bold\", hjust = 0.5),\n      plot.caption = element_text(size = 10, face = \"bold\", hjust = 1),\n      panel.background = element_rect(fill=\"white\", colour=\"white\")\n)"
   }
 ]
