@@ -49,5 +49,11 @@
   },
   "posts/Towers/index.qmd": {
     "index.html": "100d5cd9"
+  },
+  "tips.qmd": {
+    "tips.html": "efd8b770"
+  },
+  "tips/workspace/index.qmd": {
+    "index.html": "966e1b68"
   }
 }
