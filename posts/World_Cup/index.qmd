@@ -10,7 +10,11 @@ categories: [code, analysis]
 image: "cup.png"
 ---
 
-Map of the United Kingdom drawn from a shapefile layer. This is a post with executable code.
+Winning the 2022 World Cup
+
+\- The grey line shows the predictions before the start of the World Cup.
+
+\- The blue line shows the current predictions.
 
 ```{r}
 # LIB
