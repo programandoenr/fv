@@ -2,6 +2,7 @@
   {
     "listing": "/programandoenr.html",
     "items": [
+      "/posts/coffee/index.html",
       "/posts/d/index.html",
       "/posts/map_UK/index.html",
       "/posts/Towers/index.html",
@@ -14,6 +15,8 @@
   },
   {
     "listing": "/tips.html",
-    "items": []
+    "items": [
+      "/tips/d/index.html"
+    ]
   }
 ]
