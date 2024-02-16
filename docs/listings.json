@@ -15,8 +15,10 @@
   },
   {
     "listing": "/tips.html",
-    "items": [
-      "/tips/d/index.html"
-    ]
+    "items": []
+  },
+  {
+    "listing": "/av.html",
+    "items": []
   }
 ]

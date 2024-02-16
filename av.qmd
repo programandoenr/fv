@@ -1,5 +1,5 @@
 ---
-title: "Tips"
+title: "AV"
 listing:
   contents: tips
   sort: "date desc"
