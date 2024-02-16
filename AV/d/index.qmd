@@ -6,7 +6,7 @@ execute:
 title: "Telecomunicaciones y Sistemas de Seguridad"
 author: "Freddy Villabona"
 date: "2023-05-27"
-categories: [markdown]
+categories: [CA]
 image: "d.png"
 ---
 
