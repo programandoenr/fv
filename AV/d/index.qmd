@@ -1,0 +1,25 @@
+---
+execute:
+  message: false
+  warning: false
+  fig-show: no
+title: "Telecomunicaciones y Sistemas de Seguridad"
+author: "Freddy Villabona"
+date: "2023-05-27"
+categories: [markdown]
+image: "d.png"
+---
+
+**Prevención ante intrusos, protección contra incendios y videovigilancia**
+
+-   Centrales de alarmas (Grado 2 y 3)
+
+![](bb.jpg)
+
+![](AA.jpg)
+
+-   Prevención ante intrusos
+
+-   Videovigilancia
+
+![](cc.jpg)

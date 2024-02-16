@@ -116,7 +116,7 @@
     "href": "tips.html",
     "title": "Tips",
     "section": "",
-    "text": "Boxplot (data:diamonds)\n\n\n\n\n\n\n\nmarkdown\n\n\n\n\n\n\n\n\n\n\n\nMay 27, 2023\n\n\nFV\n\n\n\n\n\n\nNo matching items"
+    "text": "Telecomunicaciones y Sistemas de Seguridad\n\n\n\n\n\n\n\nmarkdown\n\n\n\n\n\n\n\n\n\n\n\nMay 27, 2023\n\n\nFV\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "tips/workspace/index.html",
@@ -135,9 +135,9 @@
   {
     "objectID": "tips/d/index.html",
     "href": "tips/d/index.html",
-    "title": "Boxplot (data:diamonds)",
+    "title": "Telecomunicaciones y Sistemas de Seguridad",
     "section": "",
-    "text": "Mathematical expressions are key to sharing information between engineers, scientists, data scientists and mathematicians. Here are some examples.\nSistema métrico:\n\n$$1 kJ/kg * ºC = 1 kJ/kg * K = 1 J/g * ºC$$\n\\[1 kJ/kg * ºC = 1 kJ/kg * K = 1 J/g * ºC\\]\nSistema métrico a ingles: \\[1 Btu/lbm *ºF = 4.1868 kJ/kg * ºC\\] \\[1 Btu/lbmol * R = 4.1868 kJ/kmol * K\\] \\[1 kJ/kg * ºC = 0.23885 btu/lbm * ºF = 0.23885 Btu/lbm * R\\]\nd"
+    "text": "Prevención ante intrusos, protección contra incendios y videovigilancia\nCentrales de alarmas (Grado 2 y 3)\n\nPrevención ante intrusos\nVideovigilancia\nSistema métrico:\n\n$$1 kJ/kg * ºC = 1 kJ/kg * K = 1 J/g * ºC$$\n\\[1 kJ/kg * ºC = 1 kJ/kg * K = 1 J/g * ºC\\]\nSistema métrico a ingles: \\[1 Btu/lbm *ºF = 4.1868 kJ/kg * ºC\\] \\[1 Btu/lbmol * R = 4.1868 kJ/kmol * K\\] \\[1 kJ/kg * ºC = 0.23885 btu/lbm * ºF = 0.23885 Btu/lbm * R\\]\nd"
   },
   {
     "objectID": "posts/coffee/index.html",
@@ -145,5 +145,12 @@
     "title": "Puntuación por taza de café (CQI)",
     "section": "",
     "text": "En este gráfico destacan los cinco países con mayor producción de café en el mundo, tomando en cuenta varias medidas de calidad: aroma, sabor, regusto, acidez, cuerpo, balance, uniformidad, limpieza de la taza, dulzura, humedad y defectos.\n\n# LIBRARIES\nlibrary(tidyverse)\nlibrary(ggpubr)\nlibrary(reshape2)\nlibrary(ggcorrplot)\nlibrary(ggcharts)\nlibrary(tmaptools)\nlibrary(prismatic)\nlibrary(patchwork)\nlibrary(gridExtra)\nlibrary(ggflags)\nlibrary(showtext)\nlibrary(camcorder)\nlibrary(ggtext)\n\n\n# FONTS\nfont_add_google(\"Luckiest Guy\",\"ramp\")\nfont_add_google(\"Bebas Neue\",\"beb\")\nfont_add_google(\"Fira Sans\",\"fira\")\nfont_add_google(\"Raleway\",\"ral\")\nfont_add_google(\"Bitter\",\"bit\")\nshowtext_auto()\n\n\n# DATA\ncoffee_ratings <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-07/coffee_ratings.csv')\ncoffee_ratings = data.frame(coffee_ratings, stringsAsFactors = FALSE)\n\ncoffee_ratings <- coffee_ratings %>%\n  filter(country_of_origin %in% c(\"Brazil\", \"Vietnam\", \"Colombia\", \"Indonesia\", \"Ethiopia\")) \n\ncoffee_ratings <- coffee_ratings %>%\n  mutate(iso3 = countrycode::countrycode(country_of_origin,\n                                         origin = \"country.name.en\",\n                                         destination = \"iso3c\"))\n\n\ndata2 <- tibble(\n  count = c(1,1,1,1,1),\n  n = c(1,2,3,4,5),\n  country =c(\"Brazil\", \"Vietnam\", \"Colombia\", \"Indonesia\", \"Ethiopia\"),\n  code =c(\"br\",\"vn\",\"co\",\"id\",\"et\"))\n\ndata1 <- coffee_ratings %>%\n  mutate(iso3 = countrycode::countrycode(country_of_origin,\n                                         origin = \"country.name.en\",\n                                         destination = \"iso3c\"))\n\n# PLOT\n\np1 <- ggplot(data=coffee_ratings) + \n  #annotation_custom(grob = g, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) + \n  xlim(69,90) +\n  geom_violin(aes(y = country_of_origin, x = total_cup_points), color=NA, alpha=.95 ) +\n  geom_jitter(aes(y = country_of_origin, x = total_cup_points),\n              height = .2, size = 4,\n              alpha = .5,\n              color = \"#daa520\")  +\n  geom_boxplot(aes(y = country_of_origin, x = total_cup_points),\n               alpha = 0,\n               outlier.shape = NA,\n               coef = 0,\n               color = \"#daa520\",\n               fill = \"red\") +\n  geom_vline(xintercept = mean(coffee_ratings$total_cup_points),\n             linetype = 2,\n             size = 0.5, col=\"red\") +\n  geom_curve(x = 83.5, y = 5, xend = 87, yend = 5.1)+\n  annotate(\"text\", label = \"Valoración media\\nde todos los países productores\", x = 87, y = 5.3, family = \"fira\") +\n  geom_segment(aes(x = mean(total_cup_points), \n                   y = country_of_origin, \n                   yend= country_of_origin, xend=  83, \n                   col=\"red\" )) +\n  geom_point(aes(y = country_of_origin, x = mean(total_cup_points)),\n             size = 4, col = \"red\") +\n  labs(title = \"\\nPuntuación por taza de café (CQI: 2010 - 2018)\",\n       subtitle = \"Mayores productores de café del mundo\\nDatos: Coffee Quality Institute (CQI) 2010-2018\\n\\nMedidas de calidad: aroma, sabor, regusto, acidez, cuerpo, balance,\\nuniformidad, limpieza de la taza, dulzura, humedad y defectos\\n\",\n       caption = \"\") +\n  xlab(\"\\nPuntuación por taza\") +\n  ylab(\" \") +\n  geom_flag(data=data2, aes(y=country,  x=70,\n                            country=code), size=25 ) +\n  theme(legend.position = \"none\",\n        panel.grid.major = element_line(size = 0.1, linetype = 'solid',\n                                        colour = \"white\"), \n        panel.grid.minor = element_line(size = 0.1, linetype = 'solid',\n                                        colour = \"white\"),\n        axis.title.x=element_text(size=16, family = \"fira\"),\n        plot.title=element_text(size=25, family = \"bit\", color = \"#190706\"),\n        axis.text.y  = element_text(color = \"#190706\", size=14, family = \"fira\"),\n        axis.text.x  = element_text(color = \"#190706\", size=12, family = \"fira\"),\n  )\n\n#p1"
+  },
+  {
+    "objectID": "AV/d/index.html",
+    "href": "AV/d/index.html",
+    "title": "Telecomunicaciones y Sistemas de Seguridad",
+    "section": "",
+    "text": "Prevención ante intrusos, protección contra incendios y videovigilancia\n\nCentrales de alarmas (Grado 2 y 3)\n\n\n\n\nPrevención ante intrusos\nVideovigilancia"
   }
 ]
