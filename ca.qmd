@@ -1,5 +1,5 @@
 ---
-title: "📊 CA"
+title: "CA"
 listing:
   contents: ca
   sort: "date desc"
