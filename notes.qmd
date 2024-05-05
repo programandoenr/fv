@@ -1,5 +1,5 @@
 ---
-title: "Notes"
+title: "📝 Notes"
 listing:
   contents: notas
   sort: "date desc"

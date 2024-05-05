@@ -7,7 +7,7 @@ title: "Viaje por mi cumpleaños"
 author: "FV"
 date: "2024-05-05"
 categories: [notes]
-image: "image.svg"
+image: "roma.jpg"
 ---
 
 Hace poco estuve visitando Roma, aprovechando los días libres de Semana Santa y regalándome el viaje por mi cumpleaños. No había estado antes en ningún lugar de Italia, pero desde antes de planear la visita tenía la impresión de que algo sabía de la ciudad. Había visto mapas, fotos de amigos viajeros y bastante material digital de los sitios más emblemáticos de la capital italiana.

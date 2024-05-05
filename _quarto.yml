@@ -21,7 +21,7 @@ website:
       logo: /files/logo.jpg
       right:
       - href: index.qmd
-        text: Home
+        text: 🏠 Home
       - programandoenr.qmd
 #      - ca.qmd
       - notes.qmd
