@@ -23,7 +23,8 @@ website:
       - href: index.qmd
         text: Home
       - programandoenr.qmd
-      - ca.qmd
+#      - ca.qmd
+      - notes.qmd
 
   
 #page-footer: "Built with Quarto - 2023"
@@ -41,7 +42,7 @@ website:
 #      - icon: rss
 #        href: index.xml
     right: |
-      2023
+      2024
 
 format:
   html:

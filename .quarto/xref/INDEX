@@ -76,5 +76,17 @@
   },
   "ca/d/index.qmd": {
     "index.html": "6532e218"
+  },
+  "notes.qmd": {
+    "notes.html": "c2109a24"
+  },
+  "notes/d/index.qmd": {
+    "index.html": "617c1703"
+  },
+  "notas/emissions/index.qmd": {
+    "index.html": "8fac847c"
+  },
+  "notas/notes_ggplot2/index.qmd": {
+    "index.html": "aeecd8bd"
   }
 }

@@ -26,5 +26,12 @@
     "items": [
       "/ca/d/index.html"
     ]
+  },
+  {
+    "listing": "/notes.html",
+    "items": [
+      "/notas/notes_ggplot2/index.html",
+      "/notas/emissions/index.html"
+    ]
   }
 ]
