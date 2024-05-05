@@ -30,8 +30,8 @@
   {
     "listing": "/notes.html",
     "items": [
-      "/notas/notes_ggplot2/index.html",
-      "/notas/emissions/index.html"
+      "/notas/emissions/index.html",
+      "/notas/notes_ggplot2/index.html"
     ]
   }
 ]
