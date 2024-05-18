@@ -1,18 +1,4 @@
----
-execute:
-  message: false
-  warning: false
-  fig-show: no
-title: "Tormentas tropicales en el Océano Atlántico"
-author: "FV"
-date: "2024-05-18"
-categories: [code, analysis]
-image: "tormenta.png"
----
 
-Ciclones desde 2008 a 2022 - Datos: NOAA
-
-```{r}
 {
   library("tidyverse")
   library("showtext")
@@ -46,7 +32,7 @@ subtitle_text <- ""
 caption_text <- "Ciclones desde 2008 a 2022 - Datos: NOAA"
 
 plot <- ggplot(storms_df, aes(fill = status, values = n)) +
-  geom_waffle(color = "white", size = .25, n_rows = 10, flip = TRUE, radius = unit(.5, "pt")) +
+  geom_waffle(color = "white", size = .25, n_rows = 20, flip = TRUE, radius = unit(.5, "pt")) +
   facet_wrap(~year, nrow = 1, strip.position = "bottom") +
   scale_x_discrete() + 
   scale_y_continuous(labels = function(x) x * 10, # make this multiplyer the same as n_rows
@@ -101,7 +87,4 @@ plot <- ggplot(storms_df, aes(fill = status, values = n)) +
     plot.margin = margin(20, 40, 20, 40)
   )
 
-#plot
-```
-
-![](tormenta.png)
+plot
