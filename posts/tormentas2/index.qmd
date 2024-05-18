@@ -3,7 +3,7 @@ execute:
   message: false
   warning: false
   fig-show: no
-title: "Tormentas tropicales"
+title: "Tormentas tropical"
 author: "FV"
 date: "2024-05-18"
 categories: [code, analysis]
@@ -29,5 +29,3 @@ ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
 ```
-
-![](tormenta.png)
