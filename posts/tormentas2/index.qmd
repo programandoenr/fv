@@ -3,7 +3,7 @@ execute:
   message: false
   warning: false
   fig-show: no
-title: "Tormentas tropicales en el Océano Atlántico"
+title: "Tormentas tropicales"
 author: "FV"
 date: "2024-05-18"
 categories: [code, analysis]
