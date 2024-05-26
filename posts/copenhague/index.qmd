@@ -1,0 +1,80 @@
+---
+execute:
+  message: false
+  warning: false
+  fig-show: no
+title: "Temperatura media en Copenhague, Dinamarca"
+author: "FV"
+date: "2024-05-26"
+categories: [code, analysis]
+image: "copenhague.png"
+---
+
+Datos: climate_CPH (1995-2019)
+
+```{r}
+{
+library("tidyverse")
+library("ggthemes")
+library("ggHoriPlot")
+library("showtext")
+library("ggtext")
+}
+
+utils::data(climate_CPH)
+
+cutpoints <- climate_CPH  %>% 
+  mutate(
+    outlier = between(
+      AvgTemperature, 
+      quantile(AvgTemperature, 0.25, na.rm=T)-1.5*IQR(AvgTemperature, na.rm=T),
+      quantile(AvgTemperature, 0.75, na.rm=T)+1.5*IQR(AvgTemperature, na.rm=T))) %>% 
+  filter(outlier)
+
+ori <- sum(range(cutpoints$AvgTemperature))/2
+sca <- seq(range(cutpoints$AvgTemperature)[1], range(cutpoints$AvgTemperature)[2], length.out = 7)[-4]
+
+
+# fonts
+font_add_google("Luckiest Guy","ramp")
+font_add_google("Bebas Neue","beb")
+font_add_google("Fira Sans","fira")
+font_add_google("Raleway","ral")
+font_add_google("Bitter","bit")
+showtext_auto()
+
+plot <-  ggplot(data = climate_CPH) +
+  geom_horizon(aes(date_mine, 
+                   AvgTemperature,
+                   fill = ..Cutpoints..), 
+               origin = ori, horizonscale = sca) +
+  scale_fill_manual(values = c("#5A101C","#BF4149","#f1d2ce","#CDE1F0","#4C8BBF","#102F63") ) +
+  facet_grid(Year~., switch = "y", scales = "free", space = "free") +
+  theme_few() +
+  
+  theme(
+    text = element_text(family = "fira"),
+    panel.spacing.y=unit(0, "lines"),
+    strip.text.y.left = element_text(size = 16, angle = 0) ,
+    axis.text.y = element_blank(),
+    axis.title.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.border = element_blank(),
+    plot.title = element_text(size=30),
+    legend.position = "bottom",
+    axis.text=element_text(size=16),
+    legend.text = element_text(size=16),
+    legend.title = element_text(size=16)
+  ) +
+  scale_x_date(expand=c(0,0), 
+               date_breaks = "1 month", 
+               date_labels = "%b") +
+  xlab('\n') +
+  ggtitle('\nTemperatura media en Copenhague, Dinamarca\n (1995 - 2019)', 
+          '\n') +
+  guides(fill=guide_legend(title="Temperatura °C"))
+
+#plot
+```
+
+![](copenhague.png)
