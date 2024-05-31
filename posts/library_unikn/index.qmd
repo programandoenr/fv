@@ -1,0 +1,25 @@
+---
+execute:
+  message: false
+  warning: false
+  fig-show: no
+title: "Generar n colores con ayuda de la librería unikin"
+author: "FV"
+date: "2024-05-31"
+categories: [code, analysis, tips]
+image: "copenhague.png"
+---
+
+Genear 5 colores
+
+```{r}
+{
+library("unikn")
+}
+  
+pal <- c("#c9bfcf","#3b2a46")
+pal <- unikn::usecol(pal, n = 5)
+pal
+```
+
+![](copenhague.png)
