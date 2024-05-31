@@ -19,6 +19,9 @@ about:
     - icon: facebook
       href: https://facebook.com/programandoenr
       
+    - icon: telegram
+      href: https://t.me/programandoinr
+      
     - text: Email
       href: mailto:freddyvillabonac@gmail.com
 ---
