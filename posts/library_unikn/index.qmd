@@ -3,23 +3,34 @@ execute:
   message: false
   warning: false
   fig-show: no
-title: "Generar n colores con ayuda de la librería unikin"
+title: "Generar n colores con ayuda de la librería unikn"
 author: "FV"
 date: "2024-05-31"
 categories: [code, analysis, tips]
-image: "copenhague.png"
+image: "unikn.png"
 ---
 
-Genear 5 colores
+
 
 ```{r}
 {
 library("unikn")
 }
-  
+
+# Genear 5 colores a partir de 2:
+
 pal <- c("#c9bfcf","#3b2a46")
 pal <- unikn::usecol(pal, n = 5)
-pal
 ```
 
-![](copenhague.png)
+
+
+
+```{r}
+# Genear 10 colores a partir de 3:
+
+pal <- c("red","#475682", "blue")
+pal <- unikn::usecol(pal, n = 10)
+```
+
+![](unikn.png)

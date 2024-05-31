@@ -1,7 +1,7 @@
 {
-  "hash": "0cb6c390e4d08a4df7cd32f55e9f1efd",
+  "hash": "ac4b275968e551179583de840b1267bd",
   "result": {
-    "markdown": "---\nexecute:\n  message: false\n  warning: false\n  fig-show: no\ntitle: \"Generar n colores con ayuda de la librería unikin\"\nauthor: \"FV\"\ndate: \"2024-05-31\"\ncategories: [code, analysis, tips]\nimage: \"copenhague.png\"\n---\n\n\nDatos: climate_CPH (1995-2019)\n\n\n::: {.cell}\n\n```{.r .cell-code}\n{\nlibrary(\"unikn\")\n}\n  \npal <- c(\"#c9bfcf\",\"#3b2a46\")\npal <- unikn::usecol(pal, n = 5)\npal\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"#C9BFCF\" \"#A599AC\" \"#82748A\" \"#5E4F68\" \"#3B2A46\"\n```\n:::\n:::\n\n\n![](copenhague.png)\n",
+    "markdown": "---\nexecute:\n  message: false\n  warning: false\n  fig-show: no\ntitle: \"Generar n colores con ayuda de la librería unikn\"\nauthor: \"FV\"\ndate: \"2024-05-31\"\ncategories: [code, analysis, tips]\nimage: \"unikn.png\"\n---\n\n::: {.cell}\n\n```{.r .cell-code}\n{\nlibrary(\"unikn\")\n}\n\n# Genear 5 colores a partir de 2:\n\npal <- c(\"#c9bfcf\",\"#3b2a46\")\npal <- unikn::usecol(pal, n = 5)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# Genear 10 colores a partir de 3:\n\npal <- c(\"red\",\"#475682\", \"blue\")\npal <- unikn::usecol(pal, n = 10)\n```\n:::\n\n\n![](unikn.png)\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
