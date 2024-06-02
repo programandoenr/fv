@@ -249,7 +249,7 @@
     "href": "posts/vinos/index.html",
     "title": "Vinos 2021, análisis descriptivo",
     "section": "",
-    "text": "El archivo VINOS.csv recopila datos sobre el precio de venta y otras características de una muestra aleatoria de 6496 tipos diferentes de vinos de la D.O de Utiel-Requena, Comunidad Valenciana, España.\nEl objetivo es extraer información útil a partir de un análisis estadístico para este marco de datos."
+    "text": "El objetivo es extraer información útil a partir de un análisis estadístico para este marco de datos.\nEl archivo VINOS.csv recopila datos sobre el precio de venta y otras características de una muestra aleatoria de 6496 tipos diferentes de vinos de la D.O de Utiel-Requena, Comunidad Valenciana, España."
   },
   {
     "objectID": "posts/vinos/index.html#relación-entre-la-calidad-del-vino-y-la-tonalidad-que-presenta-este.",
