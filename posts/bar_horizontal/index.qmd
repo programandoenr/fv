@@ -7,7 +7,7 @@ title: "Gráfico de barras horizontales con ggplot2 🇧🇷"
 author: "FV"
 date: "2024-06-02"
 categories: [code, analysis]
-image: "bar.png"
+image: "bar1.png"
 ---
 
 Los datos representan el Índice de Desarrollo Humano en los diferentes distritos del Municipio de São Paulo en el 2010.
@@ -146,4 +146,5 @@ plot <- ggplot(HDI, aes(group_hdi, share, fill = group_hdi)) +
 ```
 
 
-![](bar.png)
+![](bar1.png)
+
