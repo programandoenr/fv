@@ -5,16 +5,16 @@ execute:
   fig-show: no
 title: "Vinos 2021, análisis descriptivo"
 author: "FV"
-date: "2024-05-03"
+date: "2024-06-03"
 categories: [code, analysis]
 image: "cafe1.png"
 ---
 
 
 
-## 1.- Calidad del vino
+# 1.- Calidad del vino
 
-Se cargan las librerias: 
+Se cargan las librerías: 
 
 ```{r}
 library(dplyr)
@@ -28,17 +28,16 @@ Se carga la base de datos:
 vinos <- read.csv2("VINOS.csv")
 ```
 
-Se verifica previamente la información basica de los datos:
+Se verifica previamente la información básica de los datos (tipo de variables y la dimensión):
 
-Se verifican las variables y la deimensión de los datos.
 
 ```{r}
 str(vinos)
 ```
 
--PH, Sulfatos, Alcohol, Tobalidad y Precio, son variables numericas.
--X y Calidad son variables de tipo entero.
--Tipo, variable de tipo char. 
+- PH, Sulfatos, Alcohol, Tobalidad y Precio, son variables numericas.
+- X y Calidad son variables de tipo entero.
+- Tipo, variable de tipo char. 
 
 Se ejecuta la instrucción "summary" para conocer algunos valores estadísticos:
 
@@ -78,7 +77,6 @@ calidad_t
 Se seleccionan las variables Tonalidad y Calidad en un marco de datos de nombre calidad_tt con la finalidad de obtener otra tabla de frecuencias.
 
 
-
 ```{r}
 calidad_tt <- select(vinos, Tonalidad, Calidad)
 calidad_tt <- table(calidad_tt)
@@ -88,10 +86,7 @@ calidad_tt
 
 Se pueden notar frecuencias altas para el vino Tipo blanco, y además, frecuencias altas para los vinos de Tonalidad Verdoso y Azulado. Los valores de Calidad en general se concentran principalmente en los valores 5 y 6. 
 
-## 2.- Relación entre la calidad del vino y la tonalidad que presenta este.
-
-#### Realiza un análisis descriptivo para estudiar qué relación existe (si es que existe alguna) entre la calidad del vino (calidad) y el color que presenta el vino (Tonalidad). (Recuerda que se trata de dos variables categóricas/discretas). Escribe un breve párrafo con tus conclusiones. 
-
+# 2.- Relación entre la calidad del vino y la tonalidad que presenta este.
 
 Se seleccionan las variables Tipo y Tonalidad en un marco de datos de nombre calidad:
 
@@ -109,7 +104,7 @@ Tipo Y Tonaliadad son variables de tipo Char, Calidad es una variable numerica.
 
 Se hace un gráfico ggplot usando un fill para diferenciar las categorias blanco y tinto:
 
-##### Tipo: 
+## Tipo: 
 
 ```{r}
 ggplot(vinos, aes(x=Calidad, fill=Tipo, color=Tipo)) +
@@ -124,7 +119,7 @@ ggplot(vinos, aes(x=Calidad, fill=Tipo, color=Tipo)) +
 
 Se puede notar que ambos vinos concentran su calidad entre 5 y 6, con mayor número de frecuencuas para el vino blanco. Es claro que el vino predominante es el vino Tipo Blanco. 
 
-##### Tonalidad: 
+## Tonalidad: 
 
 ```{r}
 ggplot(vinos, aes(x=Calidad, fill=Tonalidad, color=Tonalidad)) +
@@ -142,13 +137,12 @@ Según el Tipo de Tonalidad, el vino predominante es el verdoso y en segundo lug
 
 ## 3.- Graduación alcohólica del vino.
 
-#### Realiza un análisis descriptivo de la variable Alcohol, variable que recoge la graduación alcohólica que presentan los distintos tipos de vinos analizados. Obtén el resumen estadístico de la variable, gráfico de caja-bigotes, histograma, gráfico de probabilidad normal. Escribe un breve párrafo con tus conclusiones. 
-
-Se verifican algunos valores estadísticos usando la funcion summary()
+Para realizar un análisis descriptivo de la variable Alcohol, variable que recoge la graduación alcohólica que presentan los distintos tipos de vinos analizados. Se verifican algunos valores estadísticos usando la función summary()
 
 ```{r}
 summary(vinos$Alcohol)
 ```
+
 Gráfico de bigotes:
 
 ```{r}
@@ -196,8 +190,6 @@ Los datos de la variable Alcohol parecen estar distribuidos de manera normal, si
 
 ## 4.- Precio y graduación alcohólica del vino.
 
-#### Realiza un análisis descriptivo para estudiar qué relación existe (si es que existe alguna) entre el precio del vino (Precio) y la graduación alcohólica que presenta el vino (Alcohol). (Recuerda que se trata de dos variables continuas). Escribe un breve párrafo con tus conclusiones.
-
 Se seleccionan las variables Alcohol y Precio para verificar sus relaciones:
 
 ```{r}
@@ -218,13 +210,9 @@ ggplot(precio_a, aes(x=Alcohol, y=Precio)) +
 pairs(vinos$Alcohol ~ vinos$Precio)
 ```
 
-
 En el gráfico se puede notar que los vinos de menor grado de alcohol pueden costar precios altos y bajos, y los de mayor grado de alcohol tambíen tienen precios altos y bajos. No parece existir una tendencia evidente o sólida para afirmar que el precio influye respecto a sus niveles de alcohol. 
 
-
 ## 5. Relación entre el precio del vino y el valor de la variable calidad.
-
-#### Realiza un análisis descriptivo para estudiar si existe alguna relación entre el precio de venta del vino (Precio) y la calidad de este (Calidad). Escribe un breve párrafo con tus conclusiones.
 
 Se seleccionan las variables Calidad y Precio para verificar sus relaciones:
 
@@ -246,17 +234,13 @@ ggplot(precio, aes(x=Calidad, y=Precio)) +
 Claramente se nota que entre mayor calidad de vino, mayor el precio. En promedio un vino de calidad 6 cuesta un poco más de 4.  
 
 
-## 7.- Precio medio de los vinos.
-
-#### ¿Proporcionan los datos suficiente evidencia para concluir que el precio medio de los vinos es diferente a 4.25 euros?. Realiza una prueba de hipótesis para responder a esta pregunta. 
-
-#### Obtén un intervalo con una confianza del 95% para el precio medio de los vinos. ¿Es seguro utilizar un procedimiento t en este apartado? Comprueba si se cumplen las condiciones necesarias. Escribe un breve párrafo con tus conclusiones.
-
+## 7.- Precio medio de los vinos
 
 ```{r}
 summary(vinos$Precio)
 mean(vinos$Precio)
 ```
+
 El precio medio de los vinos es de 4.147788 y con una mediana de 4.148. 
 
 Se hace la prueba t.test:
@@ -272,11 +256,7 @@ t.test(x=vinos$Precio, y = NULL,
 Con 95% de confianza se puede asegurar que los valores del precio del vino se ubican entre  4.115024 y 4.180551 Euros. Lo que significa que es inferior a los 4.25 planteados en el interrogante. 
 
 
-##  8.- Precio medio de los vinos con Tonalidad Verdoso.
-
-#### ¿Proporcionan los datos suficiente evidencia para concluir que el precio medio de los vinos con tonalidad Verdoso es diferente a 3.55 euros?. Realiza una prueba de hipótesis para responder a esta pregunta.
-
-#### Obtén un intervalo con una confianza del 90% para el precio medio de los vinos. ¿Es seguro utilizar un procedimiento t en este apartado? Comprueba si se cumplen las condiciones necesarias. Escribe un breve párrafo con tus conclusiones.
+##  8.- Precio medio de los vinos con Tonalidad Verdoso
 
 Se seleccionan las variables Calidad y Precio para verificar sus relaciones:
 
@@ -297,11 +277,8 @@ t.test(x=precio_ver$Precio, y = NULL,
 Con un 90% de confianza se puede asegurar que el precio del vino de Tonalidad verdoso se ubica entre 3.432355 y 3.514445 Euros. Un poco menos de lo planteado en el interronte. 
 
 
-## 9.- Graduación alcohólica de los vinos cuya calidad presenta un valor de 8.
+## 9.- Graduación alcohólica de los vinos cuya calidad presenta un valor de 8
 
-#### ¿Proporcionan los datos suficiente evidencia para concluir que la graduación alcohólica de los vinos con valoración 8 tienen un contenido medio de alcohol diferente de 11.9 grados?. Realiza una prueba de hipótesis para responder a esta pregunta (realízala a niveles de significación del 1 y del 5%).
-
-#### Obtén un intervalo con una confianza del 95% para el precio medio de los vinos de calidad 8. ¿Es seguro utilizar un procedimiento t en este apartado? Comprueba si se cumplen las condiciones necesarias. Escribe un breve párrafo con tus conclusiones.
 
 ```{r}
 summary(precio_ver$Alcohol)
@@ -331,9 +308,6 @@ El p-value es mucho menor que el nivel de significancia de 5% y 1%. Con un nivel
 
 ## 10.- Comparación de la graduación alcohólica de los vinos cuya calidad presenta un valor de 8 y un valor de 4.
 
-#### ¿Proporcionan los datos suficiente evidencia para concluir que el contenido medio de alcohol de los vinos con una valoración de la calidad de 8 no es el mismo que el de los vinos con valoración de calidad de 4? Realiza una prueba de hipótesis para responder a esta pregunta (realízala a niveles de significación del 1 y del 5%). Obtén un intervalo con una confianza del 95% para la diferencia entre el peso medio de estos dos tipos de vinos (µ8 - µ4). Escribe un breve párrafo con tus conclusiones.
-
-
 En primer lugar se verifica la homogeneidad de varianzas:
 
 
@@ -356,9 +330,6 @@ t.test(x=vinos$Alcohol, y = NULL,
 Con un intervalo de confianza de 95% se puede afirmar que el rango de graduación alcohólica no varia demasiado, sea con mu de 4 o de 8. 
 
 ## 11.- Comprobación de las condiciones de normalidad de la variable precio para la tonalidad Granate.
-
-#### Comprueba si se cumplen las distintas condiciones para poder asumir que dicha variable sigue una distribución normal. Escribe un breve párrafo con tus conclusiones.
-
 
 Se seleccionan las variables Precio y Tonalidad:
 
@@ -385,11 +356,6 @@ Como el p_value es mayor al 5%, por ende no se rechaza la hipotesis nula para el
 
 
 ## 12.- Comprobación del cumplimiento de las condiciones de normalidad de la variable precio para la tonalidad Azulado y para la tonalidad Dorado. 
-
-#### Comprueba si se cumplen las distintas condiciones para poder asumir que dicha variable sigue una distribución normal. Escribe un breve párrafo con tus conclusiones. ¿Es seguro utilizar un procedimiento t? Comprueba si se cumplen las condiciones necesarias para poder aplicar con seguridad estos procedimientos. 
-
-#### ¿Qué prueba de hipótesis no paramétrica podrías utilizar como alternativa al test t en este apartado? 
-
 
 Se seleccionan las variables Precio y Tonalidad:
 
@@ -428,7 +394,6 @@ head(precio_dorado, 20)
 ```
 
 
-
 ```{r}
 qqnorm(precio_dorado$Precio)
 qqline(precio_dorado$Precio)
@@ -444,6 +409,7 @@ t.test(precio_dorado$Precio)
 ```{r}
 lillie.test(precio_azulado$Precio)
 ```
+
 Como el p_value es menor al 5%, por ende se rechaza la hipotesis nula para el precio del vino de Tonalidad Dorado, lo cual significa que no se asemeja a una distribución normal, aunque tiene una similitud que puede resultar engañosa. 
 
 
