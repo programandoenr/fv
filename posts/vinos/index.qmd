@@ -7,7 +7,7 @@ title: "Vinos 2021, análisis descriptivo"
 author: "FV"
 date: "2024-06-03"
 categories: [code, analysis]
-image: "cafe1.png"
+image: "vinos.jpg"
 ---
 
 El objetivo es extraer información útil a partir de un análisis estadístico para este marco de datos.
@@ -499,3 +499,4 @@ lillie.test(precio_azulado$Precio)
 
 Como el p_value es menor al 5%, por ende se rechaza la hipotesis nula para el precio del vino de Tonalidad Dorado, lo cual significa que no se asemeja a una distribución normal, aunque tiene una similitud que puede resultar engañosa. 
 
+![](vinos.jpg)
