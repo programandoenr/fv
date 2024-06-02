@@ -1,0 +1,451 @@
+---
+execute:
+  message: false
+  warning: false
+  fig-show: no
+title: "Vinos 2021, análisis descriptivo"
+author: "FV"
+date: "2024-05-03"
+categories: [code, analysis]
+image: "cafe1.png"
+---
+
+
+
+## 1.- Calidad del vino
+
+Se cargan las librerias: 
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(nortest)
+```
+
+Se carga la base de datos:
+
+```{r}
+vinos <- read.csv2("VINOS.csv")
+```
+
+Se verifica previamente la información basica de los datos:
+
+Se verifican las variables y la deimensión de los datos.
+
+```{r}
+str(vinos)
+```
+
+-PH, Sulfatos, Alcohol, Tobalidad y Precio, son variables numericas.
+-X y Calidad son variables de tipo entero.
+-Tipo, variable de tipo char. 
+
+Se ejecuta la instrucción "summary" para conocer algunos valores estadísticos:
+
+```{r}
+summary(vinos$Calidad)
+```
+
+Se traza un gráfico de barras:
+
+```{r}
+ggplot(vinos, aes(x=Calidad)) +
+  geom_histogram(bins = 12, col="#304bae", bg="#304bae") +
+  ggtitle("Gráfico de barras: Vinos-Calidad")
+```
+
+Entre los valores 5 y 6 se encuentra la mayor concentración de la calidad de los vinos, con una mediana de 6 y con frecuencias superior a 1500. 
+
+Tabla de frecuencias (Calidad de vinos):
+
+```{r}
+calidad <- vinos$Calidad
+calidad <- table(calidad)
+calidad
+```
+
+Se seleccionan las variables Tipo y Calidad en un marco de datos de nombre calidad_t con la finalidad de hacer una tabla de frecuencias usando la función table().
+
+
+```{r}
+calidad_t <- select(vinos, Tipo, Calidad)
+calidad_t <- table(calidad_t)
+calidad_t <- as.data.frame(calidad_t)
+calidad_t
+```
+
+
+Se seleccionan las variables Tonalidad y Calidad en un marco de datos de nombre calidad_tt con la finalidad de obtener otra tabla de frecuencias.
+
+
+
+```{r}
+calidad_tt <- select(vinos, Tonalidad, Calidad)
+calidad_tt <- table(calidad_tt)
+calidad_tt <- as.data.frame(calidad_tt)
+calidad_tt
+```
+
+Se pueden notar frecuencias altas para el vino Tipo blanco, y además, frecuencias altas para los vinos de Tonalidad Verdoso y Azulado. Los valores de Calidad en general se concentran principalmente en los valores 5 y 6. 
+
+## 2.- Relación entre la calidad del vino y la tonalidad que presenta este.
+
+#### Realiza un análisis descriptivo para estudiar qué relación existe (si es que existe alguna) entre la calidad del vino (calidad) y el color que presenta el vino (Tonalidad). (Recuerda que se trata de dos variables categóricas/discretas). Escribe un breve párrafo con tus conclusiones. 
+
+
+Se seleccionan las variables Tipo y Tonalidad en un marco de datos de nombre calidad:
+
+```{r}
+calidad <- select(vinos, Calidad, Tipo, Tonalidad)
+```
+
+Se verifica el tipo de variable:
+
+```{r}
+str(calidad)
+```
+
+Tipo Y Tonaliadad son variables de tipo Char, Calidad es una variable numerica.
+
+Se hace un gráfico ggplot usando un fill para diferenciar las categorias blanco y tinto:
+
+##### Tipo: 
+
+```{r}
+ggplot(vinos, aes(x=Calidad, fill=Tipo, color=Tipo)) +
+  ggtitle("Tipos de vino") +
+  geom_histogram(alpha=2, position="identity", bins = 30)+
+  geom_density(alpha=0.5) +
+  xlab("Calidad") +
+  ylab("Frecuencias") +
+  scale_color_manual(values=c("#61b15b", "#304bae"))+
+  scale_fill_manual(values=c("#e9e4e4", "#c85c5c"))
+```
+
+Se puede notar que ambos vinos concentran su calidad entre 5 y 6, con mayor número de frecuencuas para el vino blanco. Es claro que el vino predominante es el vino Tipo Blanco. 
+
+##### Tonalidad: 
+
+```{r}
+ggplot(vinos, aes(x=Calidad, fill=Tonalidad, color=Tonalidad)) +
+  ggtitle("Tipos de vino - Tonalidad") +
+  geom_histogram(alpha=1, position="identity", bins = 30)+
+  geom_density(alpha=1) +
+  xlab("Calidad") +
+  ylab("Frecuencias") +
+  scale_color_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b"))+
+  scale_fill_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b"))
+```
+
+Según el Tipo de Tonalidad, el vino predominante es el verdoso y en segundo lugar el vino Ocre. Los vinos con Tonalidad Azulado, Dorado, Granate y Rojo, presentan frecuencias muy bajas en su Tonalidad. 
+
+
+## 3.- Graduación alcohólica del vino.
+
+#### Realiza un análisis descriptivo de la variable Alcohol, variable que recoge la graduación alcohólica que presentan los distintos tipos de vinos analizados. Obtén el resumen estadístico de la variable, gráfico de caja-bigotes, histograma, gráfico de probabilidad normal. Escribe un breve párrafo con tus conclusiones. 
+
+Se verifican algunos valores estadísticos usando la funcion summary()
+
+```{r}
+summary(vinos$Alcohol)
+```
+Gráfico de bigotes:
+
+```{r}
+ggplot(vinos, aes(x=0, y=Alcohol)) +
+  geom_boxplot(bg="#304bae") +
+  ggtitle("Boxplot: Vinos-Alcohol")
+```
+
+Con el gráfico de bigotes se puede notar la presencia de algunos datos atípicos, es decir con muy pocas ocurrencias y que marcan vinos con más de 13 en nivel de alcohol. La mediana se ubica en 10.10. Los niveles de alcohol se concentran entre 9.50 y 10.80.
+
+
+Gráfico de barras:
+
+
+```{r}
+ggplot(vinos, aes(x=Alcohol, fill=Tipo, color=Tipo)) +
+  ggtitle("Tipos de vino: Alcohol-Tipo") +
+  geom_histogram(alpha=2, position="identity", bins = 30)+
+  geom_density(alpha=0.5) +
+  xlab("Calidad") +
+  ylab("Frecuencias") +
+  scale_color_manual(values=c("#61b15b", "#304bae"))+
+  scale_fill_manual(values=c("#e9e4e4", "#c85c5c"))
+```
+
+```{r}
+ggplot(vinos, aes(x=Alcohol, fill=Tonalidad, color=Tonalidad)) +
+  ggtitle("Tipos de vino: Alcohol-Tonalidad") +
+  geom_histogram(alpha=1, position="identity", bins = 10)+
+  geom_density(alpha=1) +
+  xlab("Nivel de alcohol") +
+  ylab("Frecuencias") +
+  scale_fill_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b"))+
+  scale_color_manual(values=c("#abaaaa", "#abaaaa","#abaaaa", "#abaaaa","#abaaaa", "#abaaaa"))
+```
+
+Prueba de normalidad:
+
+```{r}
+qqnorm(vinos$Alcohol, pch = 19, col = "gray50")
+qqline(vinos$Alcohol)
+```
+
+Los datos de la variable Alcohol parecen estar distribuidos de manera normal, sin embargo no puede afirmarse totalmente. En los extremos parecen alejare mucho de la línea qqline. 
+
+## 4.- Precio y graduación alcohólica del vino.
+
+#### Realiza un análisis descriptivo para estudiar qué relación existe (si es que existe alguna) entre el precio del vino (Precio) y la graduación alcohólica que presenta el vino (Alcohol). (Recuerda que se trata de dos variables continuas). Escribe un breve párrafo con tus conclusiones.
+
+Se seleccionan las variables Alcohol y Precio para verificar sus relaciones:
+
+```{r}
+precio_a <- select(vinos, Alcohol, Precio)
+summary(precio_a)
+```
+
+```{r}
+ggplot(precio_a, aes(x=Alcohol, y=Precio)) +
+  ggtitle("Tipos de vino: Precio-Alcohol") +
+  geom_point() +
+  geom_line() +
+  xlab("Precio") +
+  ylab("Alcohol") 
+```
+
+```{r}
+pairs(vinos$Alcohol ~ vinos$Precio)
+```
+
+
+En el gráfico se puede notar que los vinos de menor grado de alcohol pueden costar precios altos y bajos, y los de mayor grado de alcohol tambíen tienen precios altos y bajos. No parece existir una tendencia evidente o sólida para afirmar que el precio influye respecto a sus niveles de alcohol. 
+
+
+## 5. Relación entre el precio del vino y el valor de la variable calidad.
+
+#### Realiza un análisis descriptivo para estudiar si existe alguna relación entre el precio de venta del vino (Precio) y la calidad de este (Calidad). Escribe un breve párrafo con tus conclusiones.
+
+Se seleccionan las variables Calidad y Precio para verificar sus relaciones:
+
+```{r}
+precio <- select(vinos, Calidad, Precio)
+summary(precio)
+```
+
+```{r}
+ggplot(precio, aes(x=Calidad, y=Precio)) +
+  ggtitle("Tipos de vino: Precio-Calidad") +
+  geom_point() +
+  geom_line() +
+  xlab("Precio") +
+  ylab("Calidad") 
+```
+
+
+Claramente se nota que entre mayor calidad de vino, mayor el precio. En promedio un vino de calidad 6 cuesta un poco más de 4.  
+
+
+## 7.- Precio medio de los vinos.
+
+#### ¿Proporcionan los datos suficiente evidencia para concluir que el precio medio de los vinos es diferente a 4.25 euros?. Realiza una prueba de hipótesis para responder a esta pregunta. 
+
+#### Obtén un intervalo con una confianza del 95% para el precio medio de los vinos. ¿Es seguro utilizar un procedimiento t en este apartado? Comprueba si se cumplen las condiciones necesarias. Escribe un breve párrafo con tus conclusiones.
+
+
+```{r}
+summary(vinos$Precio)
+mean(vinos$Precio)
+```
+El precio medio de los vinos es de 4.147788 y con una mediana de 4.148. 
+
+Se hace la prueba t.test:
+
+```{r}
+t.test(x=vinos$Precio, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 4.25, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95)
+
+```
+
+Con 95% de confianza se puede asegurar que los valores del precio del vino se ubican entre  4.115024 y 4.180551 Euros. Lo que significa que es inferior a los 4.25 planteados en el interrogante. 
+
+
+##  8.- Precio medio de los vinos con Tonalidad Verdoso.
+
+#### ¿Proporcionan los datos suficiente evidencia para concluir que el precio medio de los vinos con tonalidad Verdoso es diferente a 3.55 euros?. Realiza una prueba de hipótesis para responder a esta pregunta.
+
+#### Obtén un intervalo con una confianza del 90% para el precio medio de los vinos. ¿Es seguro utilizar un procedimiento t en este apartado? Comprueba si se cumplen las condiciones necesarias. Escribe un breve párrafo con tus conclusiones.
+
+Se seleccionan las variables Calidad y Precio para verificar sus relaciones:
+
+```{r}
+precio_ver <- filter(vinos, Tonalidad=="Verdoso")
+summary(precio_ver$Precio)
+```
+El precio medio de los vinos de Tonaldad verdoso es de 3.473 Euros. Se platea una prueba t con un 90% de confianza:
+
+```{r}
+t.test(x=precio_ver$Precio, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 3.473, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.90)
+
+```
+
+Con un 90% de confianza se puede asegurar que el precio del vino de Tonalidad verdoso se ubica entre 3.432355 y 3.514445 Euros. Un poco menos de lo planteado en el interronte. 
+
+
+## 9.- Graduación alcohólica de los vinos cuya calidad presenta un valor de 8.
+
+#### ¿Proporcionan los datos suficiente evidencia para concluir que la graduación alcohólica de los vinos con valoración 8 tienen un contenido medio de alcohol diferente de 11.9 grados?. Realiza una prueba de hipótesis para responder a esta pregunta (realízala a niveles de significación del 1 y del 5%).
+
+#### Obtén un intervalo con una confianza del 95% para el precio medio de los vinos de calidad 8. ¿Es seguro utilizar un procedimiento t en este apartado? Comprueba si se cumplen las condiciones necesarias. Escribe un breve párrafo con tus conclusiones.
+
+```{r}
+summary(precio_ver$Alcohol)
+qqnorm(precio_ver$Alcohol)
+qqline(precio_ver$Alcohol)
+
+```
+
+
+```{r}
+library(nortest) 
+ad.test(precio_ver$Alcohol)
+```
+
+```{r}
+t.test(precio_ver$Alcohol, alternative='two.sided',
+       conf.level=0.99, mu=11.9)
+```
+
+```{r}
+t.test(precio_ver$Alcohol, alternative='two.sided',
+       conf.level=0.95, mu=11.9)
+```
+El p-value es mucho menor que el nivel de significancia de 5% y 1%. Con un nivel de confianza del 99% 
+
+
+
+## 10.- Comparación de la graduación alcohólica de los vinos cuya calidad presenta un valor de 8 y un valor de 4.
+
+#### ¿Proporcionan los datos suficiente evidencia para concluir que el contenido medio de alcohol de los vinos con una valoración de la calidad de 8 no es el mismo que el de los vinos con valoración de calidad de 4? Realiza una prueba de hipótesis para responder a esta pregunta (realízala a niveles de significación del 1 y del 5%). Obtén un intervalo con una confianza del 95% para la diferencia entre el peso medio de estos dos tipos de vinos (µ8 - µ4). Escribe un breve párrafo con tus conclusiones.
+
+
+En primer lugar se verifica la homogeneidad de varianzas:
+
+
+```{r}
+t.test(x=vinos$Alcohol, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 8, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95)
+
+```
+
+```{r}
+t.test(x=vinos$Alcohol, y = NULL,
+       alternative = c("two.sided", "less", "greater"),
+       mu = 4, paired = FALSE, var.equal = FALSE,
+       conf.level = 0.95)
+
+```
+
+Con un intervalo de confianza de 95% se puede afirmar que el rango de graduación alcohólica no varia demasiado, sea con mu de 4 o de 8. 
+
+## 11.- Comprobación de las condiciones de normalidad de la variable precio para la tonalidad Granate.
+
+#### Comprueba si se cumplen las distintas condiciones para poder asumir que dicha variable sigue una distribución normal. Escribe un breve párrafo con tus conclusiones.
+
+
+Se seleccionan las variables Precio y Tonalidad:
+
+```{r}
+precio_granate <- select(vinos, Precio, Tonalidad)
+precio_granate <- filter(precio_granate, Tonalidad=="Granate")
+head(precio_granate, 20)
+```
+
+Prueba gráfica de normalidad:
+
+```{r}
+qqnorm(precio_granate$Precio)
+qqline(precio_granate$Precio)
+hist(precio_granate$Precio)
+```
+
+```{r}
+lillie.test(precio_granate$Precio)
+```
+
+
+Como el p_value es mayor al 5%, por ende no se rechaza la hipotesis nula para el precio del vino de Tonalidad Granate, lo cual significa que los datos tienen un comportamiento normal. 
+
+
+## 12.- Comprobación del cumplimiento de las condiciones de normalidad de la variable precio para la tonalidad Azulado y para la tonalidad Dorado. 
+
+#### Comprueba si se cumplen las distintas condiciones para poder asumir que dicha variable sigue una distribución normal. Escribe un breve párrafo con tus conclusiones. ¿Es seguro utilizar un procedimiento t? Comprueba si se cumplen las condiciones necesarias para poder aplicar con seguridad estos procedimientos. 
+
+#### ¿Qué prueba de hipótesis no paramétrica podrías utilizar como alternativa al test t en este apartado? 
+
+
+Se seleccionan las variables Precio y Tonalidad:
+
+```{r}
+precio_azulado <- select(vinos, Precio, Tonalidad)
+precio_azulado <- filter(precio_azulado, Tonalidad=="Azulado")
+head(precio_azulado, 20)
+```
+
+Se hace la prueba de normalidad (AZULADO):
+
+```{r}
+qqnorm(precio_azulado$Precio)
+qqline(precio_azulado$Precio)
+```
+
+```{r}
+t.test(precio_azulado$Precio)
+```
+
+
+```{r}
+lillie.test(precio_azulado$Precio)
+```
+
+Como el p_value es menor al 5%, por ende se rechaza la hipotesis nula para el precio del vino de Tonalidad Azulado, lo cual significa que no se asemeja a una distribución normal. 
+
+
+Se hace la prueba de normalidad (DORADO):
+
+
+```{r}
+precio_dorado <- select(vinos, Precio, Tonalidad)
+precio_dorado <- filter(precio_dorado, Tonalidad=="Dorado")
+head(precio_dorado, 20)
+```
+
+
+
+```{r}
+qqnorm(precio_dorado$Precio)
+qqline(precio_dorado$Precio)
+hist(precio_dorado$Precio)
+```
+
+
+```{r}
+t.test(precio_dorado$Precio)
+```
+
+
+```{r}
+lillie.test(precio_azulado$Precio)
+```
+Como el p_value es menor al 5%, por ende se rechaza la hipotesis nula para el precio del vino de Tonalidad Dorado, lo cual significa que no se asemeja a una distribución normal, aunque tiene una similitud que puede resultar engañosa. 
+
+
+
+![](cafe1.png)
