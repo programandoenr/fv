@@ -10,9 +10,13 @@ categories: [code, analysis]
 image: "cafe1.png"
 ---
 
+El archivo VINOS.csv recopila datos sobre el precio de venta y otras
+características de una muestra aleatoria de 6496 tipos diferentes de vinos
+de la D.O de Utiel-Requena, Comunidad Valenciana, España.
 
+El objetivo es extraer información útil a partir de un análisis estadístico para este marco de datos.
 
-# 1.- Calidad del vino
+## 1.- Calidad del vino
 
 Se cargan las librerías: 
 
@@ -20,6 +24,18 @@ Se cargan las librerías:
 library(dplyr)
 library(ggplot2)
 library(nortest)
+library(showtext)
+```
+
+Se cargan las fuentes de texto:
+
+```{r}
+font_add_google("Luckiest Guy","ramp")
+font_add_google("Bebas Neue","beb")
+font_add_google("Fira Sans","fira")
+font_add_google("Raleway","ral")
+font_add_google("Bitter","bit")
+showtext_auto()
 ```
 
 Se carga la base de datos:
@@ -50,7 +66,16 @@ Se traza un gráfico de barras:
 ```{r}
 ggplot(vinos, aes(x=Calidad)) +
   geom_histogram(bins = 12, col="#304bae", bg="#304bae") +
-  ggtitle("Gráfico de barras: Vinos-Calidad")
+  ggtitle("Gráfico de barras: Vinos-Calidad") +
+  theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    axis.title.y = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 Entre los valores 5 y 6 se encuentra la mayor concentración de la calidad de los vinos, con una mediana de 6 y con frecuencias superior a 1500. 
@@ -86,7 +111,7 @@ calidad_tt
 
 Se pueden notar frecuencias altas para el vino Tipo blanco, y además, frecuencias altas para los vinos de Tonalidad Verdoso y Azulado. Los valores de Calidad en general se concentran principalmente en los valores 5 y 6. 
 
-# 2.- Relación entre la calidad del vino y la tonalidad que presenta este.
+## 2.- Relación entre la calidad del vino y la tonalidad que presenta
 
 Se seleccionan las variables Tipo y Tonalidad en un marco de datos de nombre calidad:
 
@@ -100,42 +125,59 @@ Se verifica el tipo de variable:
 str(calidad)
 ```
 
-Tipo Y Tonaliadad son variables de tipo Char, Calidad es una variable numerica.
+Tipo Y Tonaliadad son variables de tipo Char, Calidad es una variable númerica.
 
 Se hace un gráfico ggplot usando un fill para diferenciar las categorias blanco y tinto:
 
-## Tipo: 
+### Tipo: 
 
 ```{r}
 ggplot(vinos, aes(x=Calidad, fill=Tipo, color=Tipo)) +
   ggtitle("Tipos de vino") +
-  geom_histogram(alpha=2, position="identity", bins = 30)+
+  geom_histogram(alpha=2, position="identity", bins = 10)+
   geom_density(alpha=0.5) +
   xlab("Calidad") +
   ylab("Frecuencias") +
   scale_color_manual(values=c("#61b15b", "#304bae"))+
-  scale_fill_manual(values=c("#e9e4e4", "#c85c5c"))
+  scale_fill_manual(values=c("#e9e4e4", "#c85c5c")) +
+    theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 Se puede notar que ambos vinos concentran su calidad entre 5 y 6, con mayor número de frecuencuas para el vino blanco. Es claro que el vino predominante es el vino Tipo Blanco. 
 
-## Tonalidad: 
+### Tonalidad: 
 
 ```{r}
 ggplot(vinos, aes(x=Calidad, fill=Tonalidad, color=Tonalidad)) +
   ggtitle("Tipos de vino - Tonalidad") +
-  geom_histogram(alpha=1, position="identity", bins = 30)+
+  geom_histogram(alpha=1, position="identity", bins = 10)+
   geom_density(alpha=1) +
   xlab("Calidad") +
   ylab("Frecuencias") +
   scale_color_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b"))+
-  scale_fill_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b"))
+  scale_fill_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b")) +
+    theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    axis.title.y = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 Según el Tipo de Tonalidad, el vino predominante es el verdoso y en segundo lugar el vino Ocre. Los vinos con Tonalidad Azulado, Dorado, Granate y Rojo, presentan frecuencias muy bajas en su Tonalidad. 
 
 
-## 3.- Graduación alcohólica del vino.
+## 3.- Graduación alcohólica del vino
 
 Para realizar un análisis descriptivo de la variable Alcohol, variable que recoge la graduación alcohólica que presentan los distintos tipos de vinos analizados. Se verifican algunos valores estadísticos usando la función summary()
 
@@ -148,13 +190,22 @@ Gráfico de bigotes:
 ```{r}
 ggplot(vinos, aes(x=0, y=Alcohol)) +
   geom_boxplot(bg="#304bae") +
-  ggtitle("Boxplot: Vinos-Alcohol")
+  ggtitle("Boxplot: Vinos-Alcohol") +
+    theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    axis.title.y = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 Con el gráfico de bigotes se puede notar la presencia de algunos datos atípicos, es decir con muy pocas ocurrencias y que marcan vinos con más de 13 en nivel de alcohol. La mediana se ubica en 10.10. Los niveles de alcohol se concentran entre 9.50 y 10.80.
 
 
-Gráfico de barras:
+###Gráfico de barras:
 
 
 ```{r}
@@ -165,7 +216,16 @@ ggplot(vinos, aes(x=Alcohol, fill=Tipo, color=Tipo)) +
   xlab("Calidad") +
   ylab("Frecuencias") +
   scale_color_manual(values=c("#61b15b", "#304bae"))+
-  scale_fill_manual(values=c("#e9e4e4", "#c85c5c"))
+  scale_fill_manual(values=c("#e9e4e4", "#c85c5c")) +
+    theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    axis.title.y = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 ```{r}
@@ -176,7 +236,16 @@ ggplot(vinos, aes(x=Alcohol, fill=Tonalidad, color=Tonalidad)) +
   xlab("Nivel de alcohol") +
   ylab("Frecuencias") +
   scale_fill_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b"))+
-  scale_color_manual(values=c("#abaaaa", "#abaaaa","#abaaaa", "#abaaaa","#abaaaa", "#abaaaa"))
+  scale_color_manual(values=c("#abaaaa", "#abaaaa","#abaaaa", "#abaaaa","#abaaaa", "#abaaaa")) +
+      theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    axis.title.y = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 Prueba de normalidad:
@@ -188,7 +257,7 @@ qqline(vinos$Alcohol)
 
 Los datos de la variable Alcohol parecen estar distribuidos de manera normal, sin embargo no puede afirmarse totalmente. En los extremos parecen alejare mucho de la línea qqline. 
 
-## 4.- Precio y graduación alcohólica del vino.
+## 4.- Precio y graduación alcohólica del vino
 
 Se seleccionan las variables Alcohol y Precio para verificar sus relaciones:
 
@@ -200,10 +269,19 @@ summary(precio_a)
 ```{r}
 ggplot(precio_a, aes(x=Alcohol, y=Precio)) +
   ggtitle("Tipos de vino: Precio-Alcohol") +
-  geom_point() +
-  geom_line() +
+  geom_point(col="#61b15b", size=.5) +
+  geom_line(col="#61b15b", size=.5) +
   xlab("Precio") +
-  ylab("Alcohol") 
+  ylab("Alcohol") +
+      theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    axis.title.y = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 ```{r}
@@ -212,7 +290,7 @@ pairs(vinos$Alcohol ~ vinos$Precio)
 
 En el gráfico se puede notar que los vinos de menor grado de alcohol pueden costar precios altos y bajos, y los de mayor grado de alcohol tambíen tienen precios altos y bajos. No parece existir una tendencia evidente o sólida para afirmar que el precio influye respecto a sus niveles de alcohol. 
 
-## 5. Relación entre el precio del vino y el valor de la variable calidad.
+## 5. Relación entre el precio del vino y el valor de la variable calidad
 
 Se seleccionan las variables Calidad y Precio para verificar sus relaciones:
 
@@ -227,7 +305,16 @@ ggplot(precio, aes(x=Calidad, y=Precio)) +
   geom_point() +
   geom_line() +
   xlab("Precio") +
-  ylab("Calidad") 
+  ylab("Calidad") +
+        theme(
+    text = element_text(family = "fira"),
+    panel.grid = element_blank(),
+    plot.title = element_text(size = 16, colour = "gray20", face="bold"),
+    axis.text.y = element_text(size = 10, colour = "gray20"),
+    axis.title.x = element_text(size = 10, colour = "gray20"),
+    axis.title.y = element_text(size = 10, colour = "gray20"),
+    panel.background = element_rect(fill = 'white', color = 'white')
+  )
 ```
 
 
@@ -329,7 +416,7 @@ t.test(x=vinos$Alcohol, y = NULL,
 
 Con un intervalo de confianza de 95% se puede afirmar que el rango de graduación alcohólica no varia demasiado, sea con mu de 4 o de 8. 
 
-## 11.- Comprobación de las condiciones de normalidad de la variable precio para la tonalidad Granate.
+## 11.- Comprobación de las condiciones de normalidad de la variable precio para la tonalidad Granate
 
 Se seleccionan las variables Precio y Tonalidad:
 
@@ -355,7 +442,7 @@ lillie.test(precio_granate$Precio)
 Como el p_value es mayor al 5%, por ende no se rechaza la hipotesis nula para el precio del vino de Tonalidad Granate, lo cual significa que los datos tienen un comportamiento normal. 
 
 
-## 12.- Comprobación del cumplimiento de las condiciones de normalidad de la variable precio para la tonalidad Azulado y para la tonalidad Dorado. 
+## 12.- Comprobación del cumplimiento de las condiciones de normalidad de la variable precio para la tonalidad Azulado y para la tonalidad Dorado
 
 Se seleccionan las variables Precio y Tonalidad:
 
@@ -412,6 +499,3 @@ lillie.test(precio_azulado$Precio)
 
 Como el p_value es menor al 5%, por ende se rechaza la hipotesis nula para el precio del vino de Tonalidad Dorado, lo cual significa que no se asemeja a una distribución normal, aunque tiene una similitud que puede resultar engañosa. 
 
-
-
-![](cafe1.png)
