@@ -3,7 +3,7 @@ execute:
   message: false
   warning: false
   fig-show: no
-title: "Gráfico de barras horizontales con ggplot2 🇧🇷🇧🇷"
+title: "Gráfico de barras horizontales con ggplot2 🇧🇷"
 author: "FV"
 date: "2024-06-02"
 categories: [code, analysis]
