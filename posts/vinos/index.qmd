@@ -213,11 +213,11 @@ Con el gráfico de bigotes se puede notar la presencia de algunos datos atípico
 ```{r}
 ggplot(vinos, aes(x=Alcohol, fill=Tipo, color=Tipo)) +
   ggtitle("Tipos de vino: Alcohol-Tipo") +
-  geom_histogram(alpha=2, position="identity", bins = 30)+
+  geom_histogram(alpha=2, position="identity", bins = 30, size=.1)+
   geom_density(alpha=0.5) +
   xlab("Calidad") +
   ylab("Frecuencias") +
-  scale_color_manual(values=c("#61b15b", "#304bae"))+
+  scale_color_manual(values=c("white", "white"))+
   scale_fill_manual(values=c("#e9e4e4", "#c85c5c")) +
     theme(
     text = element_text(family = "fira"),
@@ -233,7 +233,7 @@ ggplot(vinos, aes(x=Alcohol, fill=Tipo, color=Tipo)) +
 ```{r}
 ggplot(vinos, aes(x=Alcohol, fill=Tonalidad, color=Tonalidad)) +
   ggtitle("Tipos de vino: Alcohol-Tonalidad") +
-  geom_histogram(alpha=1, position="identity", bins = 10)+
+  geom_histogram(alpha=1, position="identity", bins = 10, size=.1, color="white")+
   geom_density(alpha=1) +
   xlab("Nivel de alcohol") +
   ylab("Frecuencias") +
@@ -253,7 +253,7 @@ ggplot(vinos, aes(x=Alcohol, fill=Tonalidad, color=Tonalidad)) +
 Prueba de normalidad:
 
 ```{r}
-qqnorm(vinos$Alcohol, pch = 19, col = "gray50")
+qqnorm(vinos$Alcohol, pch = 19, col = "blue")
 qqline(vinos$Alcohol)
 ```
 
@@ -288,7 +288,9 @@ ggplot(precio_a, aes(y=Alcohol, x=Precio)) +
 ```
 
 ```{r}
-pairs(vinos$Alcohol ~ vinos$Precio)
+pairs(vinos$Alcohol ~ vinos$Precio, 
+      pch = 19, 
+      col = 4)
 ```
 
 En el gráfico se puede notar que los vinos de menor grado de alcohol pueden costar precios altos y bajos, y los de mayor grado de alcohol tambíen tienen precios altos y bajos. No parece existir una tendencia evidente o sólida para afirmar que el precio influye respecto a sus niveles de alcohol. 
