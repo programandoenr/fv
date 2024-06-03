@@ -64,9 +64,10 @@ summary(vinos$Calidad)
 Se traza un gráfico de barras:
 
 ```{r}
-ggplot(vinos, aes(x=Calidad)) +
-  geom_histogram(bins = 12, col="#304bae", bg="#304bae") +
+  ggplot(vinos, aes(x=Calidad, fill=Tonalidad)) +
+  geom_histogram(bins = 8,  colour='white', size=.1) +
   ggtitle("Gráfico de barras: Vinos-Calidad") +
+    scale_fill_manual(values=c("#304bae", "#f5f7c0","#ab2a3e", "#c9af4f","#c85c5c", "#61b15b"))+
   theme(
     text = element_text(family = "fira"),
     panel.grid = element_blank(),
@@ -76,6 +77,7 @@ ggplot(vinos, aes(x=Calidad)) +
     axis.title.y = element_text(size = 10, colour = "gray20"),
     panel.background = element_rect(fill = 'white', color = 'white')
   )
+
 ```
 
 Entre los valores 5 y 6 se encuentra la mayor concentración de la calidad de los vinos, con una mediana de 6 y con frecuencias superior a 1500. 
@@ -106,7 +108,7 @@ Se seleccionan las variables Tonalidad y Calidad en un marco de datos de nombre 
 calidad_tt <- select(vinos, Tonalidad, Calidad)
 calidad_tt <- table(calidad_tt)
 calidad_tt <- as.data.frame(calidad_tt)
-calidad_tt
+head(calidad_tt, 10)
 ```
 
 Se pueden notar frecuencias altas para el vino Tipo blanco, y además, frecuencias altas para los vinos de Tonalidad Verdoso y Azulado. Los valores de Calidad en general se concentran principalmente en los valores 5 y 6. 
@@ -134,11 +136,11 @@ Se hace un gráfico ggplot usando un fill para diferenciar las categorias blanco
 ```{r}
 ggplot(vinos, aes(x=Calidad, fill=Tipo, color=Tipo)) +
   ggtitle("Tipos de vino") +
-  geom_histogram(alpha=2, position="identity", bins = 10)+
+  geom_histogram(alpha=2, position="identity", bins = 8, size=.1)+
   geom_density(alpha=0.5) +
   xlab("Calidad") +
   ylab("Frecuencias") +
-  scale_color_manual(values=c("#61b15b", "#304bae"))+
+  scale_color_manual(values=c("white", "white"))+
   scale_fill_manual(values=c("#e9e4e4", "#c85c5c")) +
     theme(
     text = element_text(family = "fira"),
@@ -157,7 +159,7 @@ Se puede notar que ambos vinos concentran su calidad entre 5 y 6, con mayor núm
 ```{r}
 ggplot(vinos, aes(x=Calidad, fill=Tonalidad, color=Tonalidad)) +
   ggtitle("Tipos de vino - Tonalidad") +
-  geom_histogram(alpha=1, position="identity", bins = 10)+
+  geom_histogram(alpha=1, position="identity", bins = 8, size=.1, color="white")+
   geom_density(alpha=1) +
   xlab("Calidad") +
   ylab("Frecuencias") +
@@ -267,12 +269,13 @@ summary(precio_a)
 ```
 
 ```{r}
-ggplot(precio_a, aes(x=Alcohol, y=Precio)) +
+library(viridis)
+ggplot(precio_a, aes(y=Alcohol, x=Precio)) +
+  geom_point( aes(color=Precio),  alpha = 0.7) +
   ggtitle("Tipos de vino: Precio-Alcohol") +
-  geom_point(col="#61b15b", size=.5) +
-  geom_line(col="#61b15b", size=.5) +
-  xlab("Precio") +
+  xlab("Precio (€)") +
   ylab("Alcohol") +
+  scale_color_viridis(discrete = F, direction=-1, option = "C") +
       theme(
     text = element_text(family = "fira"),
     panel.grid = element_blank(),
@@ -300,13 +303,14 @@ summary(precio)
 ```
 
 ```{r}
-ggplot(precio, aes(x=Calidad, y=Precio)) +
-  ggtitle("Tipos de vino: Precio-Calidad") +
-  geom_point() +
-  geom_line() +
-  xlab("Precio") +
-  ylab("Calidad") +
-        theme(
+precio$Calidad <- as.character(precio$Calidad)
+ggplot(precio, aes(x=Precio, fill=Calidad)) +
+  geom_histogram(bins = 30, colour='white', size=.1) +
+    ggtitle("Tipos de vino: Precio-Calidad") +
+  xlab("Precio (€)") +
+  ylab("Cantidad") +
+  scale_fill_viridis(discrete = T, direction=-1, option = "C") +
+      theme(
     text = element_text(family = "fira"),
     panel.grid = element_blank(),
     plot.title = element_text(size = 16, colour = "gray20", face="bold"),
