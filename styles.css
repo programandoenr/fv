@@ -1,1 +1,27 @@
 /* css styles */
+
+/*-- scss:defaults --*/
+
+
+/*body {
+  background-image: url("https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*background-position: center center;*/
+  /*background-attachment: fixed;*/
+/*}
+
+
+
+<!-- 
+---
+format: html
+---
+<style>
+  body {
+  background-image: url("https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
+-- 

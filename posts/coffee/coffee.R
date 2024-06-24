@@ -1,6 +1,8 @@
 setwd("/Users/fv/Desktop/CAFE_MEJOR")
 
+
 # LIBRARIES
+{
 library(tidyverse)
 library(ggpubr)
 library(reshape2)
@@ -14,7 +16,7 @@ library(ggflags)
 library(showtext)
 library(camcorder)
 library(ggtext)
-
+}
 
 # FONTS
 font_add_google("Luckiest Guy","ramp")
@@ -51,8 +53,9 @@ data1 <- coffee_ratings %>%
 
 # PLOT
 
+
 ggplot(data=coffee_ratings) + 
-  annotation_custom(grob = g, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) + 
+ # annotation_custom(grob = g, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) + 
   xlim(69,90) +
   geom_violin(aes(y = country_of_origin, x = total_cup_points), color=NA, alpha=.95 ) +
   geom_jitter(aes(y = country_of_origin, x = total_cup_points),

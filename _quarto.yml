@@ -19,6 +19,7 @@ website:
   title: "Fredd Villabona"
   navbar:
       logo: /files/logo.jpg
+      background: "#09213e"
       right:
       - href: index.qmd
         text: 🏠 Home
