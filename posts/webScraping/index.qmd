@@ -23,6 +23,7 @@ Esta vez se trabaja con el paquete ”rvest” y la intención es obtener un mar
 # Librerías 
 library("dplyr")
 library("rvest")
+library("showtext")
 
 # URL
 webpage <- read_html("https://es.wikipedia.org/wiki/Anexo:Municipios_de_Espa%C3%B1a_por_poblaci%C3%B3n")
