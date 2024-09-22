@@ -1,0 +1,46 @@
+---
+execute:
+  message: false
+  warning: false
+  fig-show: no
+title: "Web Scraping con rvest"
+author: "FV"
+date: "2024-09-22"
+categories: [code, analysis]
+image: "ws.png"
+---
+
+Existen varios paquetes para el web scraping en R, cada uno con sus ventajas y limitaciones. Esta vez se trabaja con el paquete ”rvest” y la intención es obtener un marco de datos de Wikipedia. 
+
+- En primer lugar se obtienen datos de la URL asignada, posteriormente se seleccionan los datos deseados: se seleccionan viables, se filtran elementos, se ordenan posiciones, se cambian nombres de variables, se cambian tipos de datos… 
+- La finalidad de trabajar con este paquete es obtener y ordenar datos rápidamente para estudios específicos.  
+- Manipulación de datos con "dplyr".
+
+
+
+
+```{r}
+# Librerías 
+library("dplyr")
+library("rvest")
+
+# URL
+webpage <- read_html("https://es.wikipedia.org/wiki/Anexo:Municipios_de_Espa%C3%B1a_por_poblaci%C3%B3n")
+
+# Se obtiene los datos de la URL:
+t <- webpage %>%
+  html_nodes(".mw-parser-output") %>%
+  html_table()  
+t <- t[[1]] 
+
+# Se seleccionan los elementos deseados:
+t <- t[(8:31),] 
+
+# Se seleccionan variables y se cambian los nombres:
+t1 <- select(t, 2:5)
+variables <- c("Nombre", "Población", "Provincia", "Comunidad Autónoma")
+names(t1) = c(variables)
+t1
+```
+
+

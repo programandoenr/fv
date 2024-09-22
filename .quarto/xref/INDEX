@@ -109,5 +109,8 @@
   },
   "posts/vinos/index.qmd": {
     "index.html": "cd1b6651"
+  },
+  "posts/webScraping/index.qmd": {
+    "index.html": "5339e06f"
   }
 }
