@@ -7,7 +7,7 @@ title: "Población de China"
 author: "FV"
 date: "2024-10-17"
 categories: [code, map]
-image: "china_1.png"
+image: "china_3.png"
 ---
 
 En este caso trabajando con la librería “mapchina”. Esta librería contiene capas shapefile y datos poblacionales. Trabajando con la función gradiente de colores.
@@ -152,5 +152,6 @@ plot <- ggplot(data = df) +
 
 
 ![](china_1.png)
+![](china_3.png)
 
 Datos y capa shapefile: library("mapchina")

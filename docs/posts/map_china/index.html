@@ -202,15 +202,13 @@ gtag('config', 'G-DSTHFZLFYC', { 'anonymize_ip': true});
 
 
 
-<p>En este caso trabajando con la librería “mapchina”. Contiene capas shapefile y datos poblacionales.</p>
-<p>Partiendo con datos geográficos, variables numéricas y trabajando con la función gradiente de colores.</p>
-<p>Este mapa intenta mostrar algunos detalles significativos:</p>
+<p>En este caso trabajando con la librería “mapchina”. Esta librería contiene capas shapefile y datos poblacionales. Trabajando con la función gradiente de colores.</p>
+<p>Este mapa intenta mostrar algunos detalles significativos al momento de trazar mapas con ggplot2:</p>
 <ul>
 <li>Gradiente de colores (mayor o menor densidad poblacional)</li>
-<li>Trazo de segmentos, puntos y textos en ubicaciones especificas</li>
+<li>Trazo de segmentos, puntos y textos en ubicaciones específicas</li>
 <li>Tema personalizado (fondos, fuentes, márgenes, leyendas)</li>
 </ul>
-<p>Datos y capa shapefile: library(mapchina)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
@@ -335,7 +333,8 @@ gtag('config', 'G-DSTHFZLFYC', { 'anonymize_ip': true});
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">'white'</span>, <span class="at">color =</span> <span class="st">'white'</span>),</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="china_1.png" class="img-fluid"></p>
+<p><img src="china_1.png" class="img-fluid"> <img src="china_3.png" class="img-fluid"></p>
+<p>Datos y capa shapefile: library(“mapchina”)</p>
 
 
 
