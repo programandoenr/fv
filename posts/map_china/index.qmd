@@ -10,14 +10,12 @@ categories: [code, map]
 image: "china_1.png"
 ---
 
-En este caso trabajando con la librería “mapchina”.  Contiene capas shapefile y datos poblacionales. 
+En este caso trabajando con la librería “mapchina”. Esta librería contiene capas shapefile y datos poblacionales. Trabajando con la función gradiente de colores.
 
-Partiendo con datos geográficos, variables numéricas y trabajando con la función gradiente de colores. 
-
-Este mapa intenta mostrar algunos detalles significativos: 
+Este mapa intenta mostrar algunos detalles significativos al momento de trazar mapas con ggplot2:
 
 - Gradiente de colores (mayor o menor densidad poblacional)
-- Trazo de segmentos, puntos y textos en ubicaciones especificas 
+- Trazo de segmentos, puntos y textos en ubicaciones específicas
 - Tema personalizado (fondos, fuentes, márgenes, leyendas)
 
 
