@@ -29,7 +29,7 @@ plot <- ggplot(data = df) +
     name = waiver(),
     low = "red",
     mid = "#f9f8f9",
-    high = "blue",
+    high = "red",
     midpoint = 0,
     space = "Lab",
     na.value = "grey50",
@@ -54,7 +54,7 @@ plot <- ggplot(data = df) +
     colour = "gray20") +
   
   geom_text(
-    label="4%",
+    label="6%",
     x = 90, y = 40,
     size=12,
     family="fira",
@@ -123,6 +123,7 @@ plot <- ggplot(data = df) +
         panel.background = element_rect(fill = 'white', color = 'white'),
         legend.position = "none") 
 
+plot
 
 
 

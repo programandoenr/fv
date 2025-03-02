@@ -32,7 +32,7 @@ website:
 
   page-footer:
     left: |
-      Built with <a href="https://quarto.org/">Quarto</a>
+      Built with Quarto
 #    center: 
 #      - icon: github
 #        href: https://github.com/willingc
@@ -43,10 +43,10 @@ website:
 #      - icon: rss
 #        href: index.xml
     right: |
-      2024
+      2025
 
 format:
-  html:
+  html-lumo:
     theme: cosmo
     css: styles.css
     toc: true

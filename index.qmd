@@ -1,20 +1,27 @@
 ---
-execute:
-  include: false
-#image: fv.jpg
+title: "&nbsp;&nbsp;Freddy Villabona C."
+subtitle: "Working as a data scientist at Boluda S. L. |  [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing)<br>ProgramandoenR | R Views |<br>Syndicated on [R-Bloggers]() & R Weekly<br><br>**`May all dreams come true! :)`**"
+format:
+  lumo-html: 
+    logo: "a.jpg"                                     # Optional. Path to a logo displayed above the title
+ #   github-repo: "https://github.com/holtzy/lumo"        # Optional. Adds a github corner at the top right
+    primary-color: "#2a45b0"
+    self-contained: true
+    is-particlejs-enabled: true                          # Optional: display interactive particles in the document header
+ #  bg-image: ""                                         # Optional: link to an image for the header background
 about:
-  template: jolla
-  links:
+    template: jolla
+    links:
     - icon: instagram
-      text: freddyvillabona
-      href: https://instagram.com/freddyvillabona
+      text: freddvillabona
+      href: https://instagram.com/freddvillabona
       
     - icon: instagram
       text: programandoenr
       href: https://instagram.com/programandoenr
       
     - icon: twitter
-      href: https://twitter.com/freddyvillabona
+      href: https://twitter.com/freddvillabona
       
     - icon: facebook
       href: https://facebook.com/programandoenr
@@ -25,16 +32,3 @@ about:
     - text: Email
       href: mailto:freddyvillabonac@gmail.com
 ---
-
-#### ![](a.jpg){width="200"}
-
-#### **`%>% Dreams`**
-
-**Freddy Villabona C.**
-
-###### Working as a data scientist at BBVA \| [Resume](https://docs.google.com/document/d/1tK3Pr6gwD0YipuBWaxsrwVTeCnOuY7V82V6s0LOSIXk/edit?usp=sharing "Resume (ES)")
-
-###### [ProgramandoenR](https://freddyvillabona.github.io/fv/programandoenr.html) \| [R Views](https://rviews.rstudio.com/) \|
-
-Syndicated on [R-Bloggers](https://www.r-bloggers.com/author/dreams/) & [R Weekly](https://rweekly.org/)
-
