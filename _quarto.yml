@@ -16,7 +16,7 @@ project:
 website:
   favicon: files/logo.jpg
   google-analytics: "G-DSTHFZLFYC"
-  title: "Fredd Villabona"
+  title: "|>"
   navbar:
       logo: /files/logo.jpg
       background: "#09213e"
