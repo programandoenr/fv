@@ -24,7 +24,7 @@ website:
       - href: index.qmd
         text: 🏠 Home
       - programandoenr.qmd
-      - intrusionsistems.qmd
+      - intrusionsystems.qmd
 #      - ca.qmd
       - notes.qmd
 
