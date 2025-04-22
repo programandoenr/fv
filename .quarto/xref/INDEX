@@ -130,5 +130,11 @@
   },
   "intrusionsystems.qmd": {
     "intrusionsystems.html": "0da3a363"
+  },
+  "intrusionSystems/coffee/index.qmd": {
+    "index.html": "4e301604"
+  },
+  "intrusionSystems/risco/index.qmd": {
+    "index.html": "99beb399"
   }
 }

@@ -1,0 +1,26 @@
+---
+execute:
+  message: false
+  warning: false
+  fig-show: no
+title: "Sistema de alarma Risco"
+author: "FV"
+date: "2025-04-21"
+categories: [alarm, data]
+
+---
+
+Sistema de alarma Risco de 80 zonas
+
+Este sistema orienta un enfoque fiable para asegurar hogares y negocios contra entradas no autorizadas. Es un sistema avanzado que abarca una amplia gama de características de seguridad de vanguardia, incluyendo detectores de movimiento, sensores de puertas y ventanas, detectores de rotura de cristales, y detectores sísmicos, todos diseñados para detectar y disuadir a posibles intrusos.
+
+En este caso, el Sistema de alarma de 80 zonas busca resguardar una fábrica de 4000 m², con múltiples accesos y sitios críticos (techos, pasillos y perimetro). 
+
+La central utilizada es LightSYS+. Se comparten algunas imágenes de la configuración e instalación del sistema. 
+
+```{r}
+
+```
+
+
+<!-- ![](cafe1.png) image: "cafe1.png" -->
