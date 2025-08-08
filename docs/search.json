@@ -464,7 +464,7 @@
   {
     "objectID": "Hindex.html",
     "href": "Hindex.html",
-    "title": "Fredd Villabona",
+    "title": "|>",
     "section": "",
     "text": "%&gt;% Dreams\nFreddy Villabona C.\n\nWorking as a data scientist at Boluda S. L. | Resume\n\n\nProgramandoenR | R Views |\nSyndicated on R-Bloggers & R Weekly"
   },
@@ -502,5 +502,12 @@
     "title": "Sistema de alarma Risco",
     "section": "",
     "text": "Sistema de alarma Risco de 80 zonas\nEste sistema orienta un enfoque fiable para asegurar hogares y negocios contra entradas no autorizadas. Es un sistema avanzado que abarca una amplia gama de características de seguridad de vanguardia, incluyendo detectores de movimiento, sensores de puertas y ventanas, detectores de rotura de cristales, y detectores sísmicos, todos diseñados para detectar y disuadir a posibles intrusos.\nEn este caso, el Sistema de alarma de 80 zonas busca resguardar una fábrica de 4000 m², con múltiples accesos y sitios críticos (techos, pasillos y perimetro).\nLa central utilizada es LightSYS+. Se comparten algunas imágenes de la configuración e instalación del sistema."
+  },
+  {
+    "objectID": "Sin título.html",
+    "href": "Sin título.html",
+    "title": "j",
+    "section": "",
+    "text": "title: “  Freddy Villabona C.” subtitle: “Working as a data scientist at h.security S. L.Resume | ProgramandoenR | R ViewsSyndicated on R-Bloggers & R Weekly|&gt; May all dreams come true! :)” format: lumo-html: logo: “a.jpg” # Optional. Path to a logo displayed above the title # github-repo: “https://github.com/holtzy/lumo” # Optional. Adds a github corner at the top right primary-color: “#2a45b0” self-contained: true is-particlejs-enabled: true # Optional: display interactive particles in the document header # bg-image: “” # Optional: link to an image for the header background about: template: jolla links: - icon: instagram text: freddvillabona href: https://instagram.com/freddvillabona\n- icon: instagram\n  text: programandoenr\n  href: https://instagram.com/programandoenr\n  \n- icon: twitter\n  href: https://twitter.com/freddvillabona\n  \n- icon: facebook\n  href: https://facebook.com/programandoenr\n  \n- icon: telegram\n  href: https://t.me/programandoinr\n  \n- text: Email\n  href: mailto:freddyvillabonac@gmail.com"
   }
 ]
